@@ -32,13 +32,87 @@
     </nav>
     </div>
 
-<div class="task-container">
-    <form class="form-inline my-2">
-      <i class="fas fa-plus-circle px-2"></i>Add Task
-      <input class="justify-content-right form-control mr-sm-2" type="text" placeholder="Filter.." aria-label="Filter">
-      <button class="justify-content-right btn btn-outline-success my-2 my-sm-0" type="text">Search</button>
-    </form>
-</div>
+<!--adding cards-->
+
+<div class="card-group">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Task Planner</h5>
+        <ul class="list-group">
+            <li inputmode="text" placeholder="list-group-item" id="task" class="list-group-item">Task 1</li>
+            <li class="list-group-item">Task 2</li>
+            <li class="list-group-item">Task 3</li>
+            <li class="list-group-item">Task 4</li>
+            <li class="list-group-item">Task 5</li>
+        </ul>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+        
+      <div class="card-body">
+        <h5 class="card-title">Assign to</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Owner 1</li>
+            <li class="list-group-item">Owner 2</li>
+            <li class="list-group-item">Owner 3</li>
+            <li class="list-group-item">Owner 4</li>
+            <li class="list-group-item">Owner 5</li>
+        </ul>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Status</h5>
+            
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-info">Review</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-success">Done</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">In Progress</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Problem</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">To do</a>
+            </div>
+            
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Due date</h5>
+            <ul class="list-group">
+                <li class="list-group-item">Date/Month/Year</li>
+                <li class="list-group-item">Date/Month/Year</li>
+                <li class="list-group-item">Date/Month/Year</li>
+                <li class="list-group-item">Date/Month/Year</li>
+                <li class="list-group-item">Date/Month/Year</li>
+            </ul>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+      
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Priority</h5>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Low</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Medium</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">High!</a>
+            </div>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+    <!--Form task-->
 
 <form action="/action_page.php">
     <div class="container">
@@ -61,9 +135,9 @@
             <div class="col-sm-2">
                 <label for="status">Status</label>
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropdownmenubutton">
-                            Working status
-                        </button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropdownmenubutton">
+                                Working status
+                            </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#" style="background-color: rgb(248, 248, 124);">Working on it</a>
                             <a class="dropdown-item" href="#" style="background-color: rgb(231, 59, 59);">Problem</a>
