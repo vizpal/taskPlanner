@@ -1,5 +1,79 @@
 .task-container{
-    background-color: grey;
     width: 80%;
     height: 100px;
+}
+
+.layout-container{
+    margin-left: 10vw;
+    height:100%;
+}
+
+.unassigned-layout-container{
+    width:25vh;
+    height: 600px;
+
+
+}
+.active-layout-container{
+    width:25vh;
+    height: 600px;
+
+}
+
+.inprogress-layout-container{
+    width:25vh;
+    height: 600px;
+
+    
+}
+
+.completed-layout-container{
+    width:25vh;
+    height: 600px;
+
+    
+}
+
+.btn{
+    float:right;
+}
+
+.card-title{
+    margin: 0 auto;
+    padding-top: 0;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.card-group{
+    border-style:solid;
+    border-color: black;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.task-action{
+    
+}
+
+.board-status-title-unassigned{
+    text-align: center;
+    color:rgb(170, 167, 167);
+}
+
+.board-status-title-assigned{
+    text-align: center;
+    color:rgb(135, 128, 230);
+}
+.board-status-title-inprogress{
+    text-align: center;
+    color:rgb(219, 216, 13);
+}
+.board-status-title-completed{
+    text-align: center;
+    color:rgb(15, 172, 15);
+}
+
+.board{
+    padding-left:12px;
 }
