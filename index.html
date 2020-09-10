@@ -32,119 +32,45 @@
     </nav>
     </div>
 
-<!--adding cards-->
+<div class="task-container">
+    <form class="form-inline my-2">
+      <i class="fas fa-plus-circle px-2"></i>Add Task
+      <input class="justify-content-right form-control mr-sm-2" type="text" placeholder="Filter.." aria-label="Filter">
+      <button class="justify-content-right btn btn-outline-success my-2 my-sm-0" type="text">Search</button>
+    </form>
+</div>
 
-<div class="card-group">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Task Planner</h5>
-        <ul class="list-group">
-            <li inputmode="text" placeholder="list-group-item" id="task" class="list-group-item">Task 1</li>
-            <li class="list-group-item">Task 2</li>
-            <li class="list-group-item">Task 3</li>
-            <li class="list-group-item">Task 4</li>
-            <li class="list-group-item">Task 5</li>
-        </ul>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    <div class="card">
-        
-      <div class="card-body">
-        <h5 class="card-title">Assign to</h5>
-        <ul class="list-group">
-            <li class="list-group-item">Owner 1</li>
-            <li class="list-group-item">Owner 2</li>
-            <li class="list-group-item">Owner 3</li>
-            <li class="list-group-item">Owner 4</li>
-            <li class="list-group-item">Owner 5</li>
-        </ul>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Status</h5>
-            
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-info">Review</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-success">Done</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">In Progress</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Problem</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">To do</a>
-            </div>
-            
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Due date</h5>
-            <ul class="list-group">
-                <li class="list-group-item">Date/Month/Year</li>
-                <li class="list-group-item">Date/Month/Year</li>
-                <li class="list-group-item">Date/Month/Year</li>
-                <li class="list-group-item">Date/Month/Year</li>
-                <li class="list-group-item">Date/Month/Year</li>
-            </ul>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-      
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Priority</h5>
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Low</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Medium</a>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">High!</a>
-            </div>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-
-
-    <!--Form task-->
-
-<form action="/action_page.php">
+<form action="">
     <div class="container">
         <div class="form-group row">
             <div class="col-sm-4">
                 <label for="task-planner">Task Planner</label>
-                <input type="task-planner" class="form-control" placeholder="Task Planner" id="task-planner" name="task-planner">
-                <input type="task-planner" class="form-control" placeholder="Task Planner" id="task-planner" name="task-planner">
-                <input type="task-planner" class="form-control" placeholder="Task Planner" id="task-planner" name="task-planner">
-                <input type="task-planner" class="form-control" placeholder="Task Planner" id="task-planner" name="task-planner">
+                <input type="task-planner" class="form-control" placeholder="Task Planner" class="task-planner" name="task-planner">
+                <!-- <input type="task-planner" class="form-control" placeholder="Task Planner" class="task-planner" name="task-planner">
+                <input type="task-planner" class="form-control" placeholder="Task Planner" class="task-planner" name="task-planner">
+                <input type="task-planner" class="form-control" placeholder="Task Planner" class="task-planner" name="task-planner"> -->
             </div>
             <div class="col-sm-2">
                 <label for="owner">Owner</label>
-                <input type="owner" class="form-control" placeholder="Owner" id="owner" name="owner">
-                <input type="owner" class="form-control" placeholder="Owner" id="owner" name="owner">
-                <input type="owner" class="form-control" placeholder="Owner" id="owner" name="owner">
-                <input type="owner" class="form-control" placeholder="Owner" id="owner" name="owner">
+                <input type="owner" class="form-control" placeholder="Owner" class="owner" name="owner">
+                <!-- <input type="owner" class="form-control" placeholder="Owner" class="owner" name="owner">
+                <input type="owner" class="form-control" placeholder="Owner" class="owner" name="owner">
+                <input type="owner" class="form-control" placeholder="Owner" class="owner" name="owner"> -->
             </div>
             
             <div class="col-sm-2">
                 <label for="status">Status</label>
                     <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropdownmenubutton">
-                                Working status
-                            </button>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" class="dropdownmenubutton">
+                            Working status
+                        </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#" style="background-color: rgb(248, 248, 124);">Working on it</a>
                             <a class="dropdown-item" href="#" style="background-color: rgb(231, 59, 59);">Problem</a>
                             <a class="dropdown-item" href="#" style="background-color: rgb(132, 233, 236);">Complete</a>
                         </div>
                 
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropdownmenubutton">
+                        <!-- <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" class="dropdownmenubutton">
                             Working status
                         </button>
                         <div class="dropdown-menu">
@@ -153,7 +79,7 @@
                             <a class="dropdown-item" href="#" style="background-color: rgb(132, 233, 236);">Complete</a>
                         </div>
 
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropdownmenubutton">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" class="dropdownmenubutton">
                             Working status
                         </button>
                         <div class="dropdown-menu">
@@ -162,24 +88,24 @@
                             <a class="dropdown-item" href="#" style="background-color: rgb(132, 233, 236);">Complete</a>
                         </div>
 
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropdownmenubutton">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" class="dropdownmenubutton">
                             Working status
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#" style="background-color: rgb(248, 248, 124);">Working on it</a>
                             <a class="dropdown-item" href="#" style="background-color: rgb(231, 59, 59);">Problem</a>
                             <a class="dropdown-item" href="#" style="background-color: rgb(132, 233, 236);">Complete</a>
-                        </div>
+                        </div> -->
                     
                     </div>
             </div>
             
             <div class="col-sm-2">
                 <label for="due-date">Due Date</label>
-                <input type="due-date" class="form-control" placeholder="Due Date" id="due-date" name="due-date">
-                <input type="due-date" class="form-control" placeholder="Due Date" id="due-date" name="due-date">
-                <input type="due-date" class="form-control" placeholder="Due Date" id="due-date" name="due-date">
-                <input type="due-date" class="form-control" placeholder="Due Date" id="due-date" name="due-date">
+                <input type="due-date" class="form-control" placeholder="Due Date" class="due-date" name="due-date">
+                <!-- <input type="due-date" class="form-control" placeholder="Due Date" class="due-date" name="due-date">
+                <input type="due-date" class="form-control" placeholder="Due Date" class="due-date" name="due-date">
+                <input type="due-date" class="form-control" placeholder="Due Date" class="due-date" name="due-date"> -->
             </div>
 
             <div class="col-sm-2">
@@ -194,7 +120,7 @@
                       <a class="dropdown-item" href="#" style="background-color: salmon;">Low</a>
                     </div>
 
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <!-- <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         Priority
                       </button>
                       <div class="dropdown-menu">
@@ -219,7 +145,7 @@
                         <a class="dropdown-item" href="#" style="background-color: rgb(231, 61, 61);">High</a>
                         <a class="dropdown-item" href="#" style="background-color: royalblue;">Medium</a>
                         <a class="dropdown-item" href="#" style="background-color: salmon;">Low</a>
-                      </div>    
+                      </div>     -->
                 </div>
             </div>
         </div>  
@@ -227,6 +153,54 @@
 </form>        
 
 <hr>
+<!-- Form Fields with Bootstrap Validation-->
+<h2 class="board-heading">Add Task</h2>
+<div>
+    <form id="form-validate" class="needs-validation" novalidation >
+        <div class="form-group">
+            <label for="form-validate-task-name">Task Name</label>
+            <input type="text" id="form-validate-task-name" class="form-control" placeholder="Task Name (minimum 8 characters long)" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Task Name needs to be 8 characters long or more</div>
+        </div>
+        <div class="form-group">
+            <label for="form-validate-task-description">Task Description</label>
+            <input type="text" id="form-validate-task-description" class="form-control" placeholder="Task Description (minimum 15 characters long)" >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Task Description needs to be 15 characters long or more</div>
+        </div>
+        <div class="form-group">
+            <label for="form-validate-task-assignedTo">Assignee</label>
+            <input type="text" id="form-validate-task-assignedTo" class="form-control" placeholder="Assign User Name (minimum 8 charaters long)" >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Task Assignee needs to be 8 characters long or more</div>
+        </div>
+
+        <div class="form-group">
+            <label for="form-validate-task-dueDate">Due Date</label>
+            <input type="text" id="form-validate-task-DueDate" class="form-control datepicker" name="date">
+        </div>
+        
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Task Name needs to be 3 characters long or more</div>
+
+        <div class="form-row my-3">
+            <button class="btn btn-primary btn-block" type="submit"> Add Task </button>
+        <div>
+    </form>
+
+<hr>
+<!-- Update Task List-->
+<h2 class="board-heading">Task List</h3>
+    <div class="container" id="task-list-update">
+        <div class="list-row " id="list-row">
+
+        </div>
+
+    </div>
+
+<hr>
+
 <h2 class="board-heading">Kanban View</h2>
 <br><br><br>
 
@@ -402,6 +376,7 @@
 -->
 
 <!--Scripts and Addons-->
+    <script src="./app.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>  
