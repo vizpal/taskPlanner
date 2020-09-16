@@ -29,7 +29,7 @@ class taskManager {
         //             })
         //         }
         //     }
-        // Function addTask adds task to back of aray object 
+        // Function addTask adds task to back of aray object
     addTask(task) {
             return this.taskManagerList.push(task);
         }
@@ -37,18 +37,18 @@ class taskManager {
         // addTask(tname, tDescription, tAssignee, tDate) {
         //         return this.taskManagerList.push(new taskObject(taskId++, tname, tDescription, tAssignee, tDate));
         //     }
-        // Function deleteTask deletes task from task list 
+        // Function deleteTask deletes task from task list
     deleteTask(task) {
             return this.taskManagerList.pop();
         }
-        // Function updateTask updates the task status 
+        // Function updateTask updates the task status
     updateTask(taskId, status) {
             for (let i = 0; i < this.taskManagerList.length; i++) {
                 if (i.Id == taskId) i.tStatus = status
             }
             return this.taskManagerList;
         }
-        // Function assignTask updates assignee to task 
+        // Function assignTask updates assignee to task
     assignTask(taskId, assignee) {
         for (let i = 0; i < this.taskManagerList.length; i++) {
             if (i.Id == taskId) i.tAssignee = assignee;
