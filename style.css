@@ -1,80 +1,80 @@
-.task-container{
+    .task-container {
     width: 80%;
     height: 100px;
 }
 
-.layout-container{
+.layout-container {
     margin-left: 10vw;
-    height:800px;
-    overflow:auto;
+    height: 800px;
+    overflow: auto;
 }
 
-.unassigned-layout-container{
-    width:25vh;
+.unassigned-layout-container {
+    width: 25vh;
     height: 600px;
-
-
 }
-.active-layout-container{
-    width:25vh;
+
+.active-layout-container {
+    width: 25vh;
     height: 600px;
-
 }
 
-.inprogress-layout-container{
-    width:25vh;
+.inprogress-layout-container {
+    width: 25vh;
     height: 600px;
-
-    
 }
 
-.completed-layout-container{
-    width:25vh;
+.completed-layout-container {
+    width: 25vh;
     height: 600px;
-
-    
 }
 
-.btn{
-    float:right;
+.btn {
+    float: right;
 }
 
-.card-title{
+.card-title {
     margin: 0 auto;
     padding-top: 0;
     text-align: center;
     text-decoration-line: underline;
 }
 
-.card-group{
-    border-style:solid;
+.card-group {
+    border-style: solid;
     border-color: black;
-    margin-left:5px;
-    margin-right:5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.task-action{
-    
+.task-action {}
+
+.board-status-title-unassigned {
+    text-align: center;
+    color: rgb(170, 167, 167);
 }
 
-.board-status-title-unassigned{
+.board-status-title-assigned {
     text-align: center;
-    color:rgb(170, 167, 167);
-}
-
-.board-status-title-assigned{
-    text-align: center;
-    color:rgb(135, 128, 230);
-}
-.board-status-title-inprogress{
-    text-align: center;
-    color:rgb(219, 216, 13);
-}
-.board-status-title-completed{
-    text-align: center;
-    color:rgb(15, 172, 15);
-}
-
-.board-heading{
-    padding-left:12px;
-}
+    color: rgb(135, 128, 230);
+    .board-status-title-inprogress {
+        text-align: center;
+        color: rgb(219, 216, 13);
+    }
+    .board-status-title-completed {
+        text-align: center;
+        color: rgb(15, 172, 15);
+    }
+    .board-heading {
+        padding-left: 12px;
+    }
+    .list-row {
+        float: right;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    th {
+        border: 1px solid #cccccc;
+        padding 10px;
+    }
