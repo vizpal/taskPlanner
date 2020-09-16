@@ -3,6 +3,7 @@ const formValidateTaskName = document.querySelector('#form-validate-task-name');
 const formValidateTaskDescription = document.querySelector('#form-validate-task-description');
 const formValidateTaskAssignedTo = document.querySelector('#form-validate-task-assignedTo');
 const formValidateTaskDueDate = document.querySelector('#form-validate-task-DueDate');
+let tableData = "";
 console.log(formValidate);
 
 
@@ -44,56 +45,36 @@ formValidate.addEventListener("submit", (event) => {
         formValidateTaskAssignedTo.classList.remove('is-valid');
     }
 
+    // Insert Date to HTML Page
     // ----------------------------------------------------------------------------------
-    let updateList = document.querySelector("#task-list-update")
-    let itemOne = document.createElement("div");
-    itemOne.innerText = formValidateTaskName.value;
+    let updateList = document.querySelector("#task-list-update");
+    let tableBody = document.querySelector("#table-data");
 
-    let itemTwo = document.createElement("div");
-    itemTwo.innerText = formValidateTaskDescription.value;
+    let taskPlanner = new taskManager;
+    let newTask = new taskObject(0, formValidateTaskName.value, formValidateTaskDescription.value, formValidateTaskAssignedTo.value, formValidateTaskDueDate.value, "ASSIGNED");
+    taskPlanner.addTask(newTask);
+    console.log(taskPlanner.taskManagerList);
 
-    let itemThree = document.createElement("div");
-    itemThree.innerText = formValidateTaskAssignedTo.value;
-    updateList.appendChild(itemOne);
-    updateList.appendChild(itemTwo);
-    updateList.appendChild(itemThree);
+    for (let idx = 0; idx < taskPlanner.taskManagerList.length; idx++) {
+        let task = taskPlanner.taskManagerList[idx];
+        tableData += `<tr><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td></tr>`;
+    }
 
-
-
-    orgHTML = document.getElementById("task-list-update").innerHTML;
-    console.log(orgHTML);
-    console.log("===============================");
-    newHTML = "<div class='row-div'>" + orgHTML + "</div>";
-    console.log(newHTML);
-    document.getElementById("task-list-update").innerHTML = newHTML;
+    tableBody.innerHTML = tableData;
 });
 
-let btnUpdateList = () => {
-        let updateList = document.querySelector("task-list-update")
-        let para = document.createElement("li");
-        console.log(formValidateTaskName);
-        para.innerText = formValidateTaskName.value;
-        updateList.appendChild(para);
-    }
-    // var taskItem = new taskObject(  formValidateTaskName.value, 
-    //                                 formValidateTaskDescription.value, 
-    //                                 formValidateTaskAssignedTo.value,
-    //                                 formValidateTaskDueDate.value);
-    // taskManager.addTask(taskItem);
-    // taskManager.deleteTask(formValidateTaskName.value, formValidateTaskDescription.value, formValidateTaskAssignedTo.value,formValidateTaskDueDate.value);
+function updateTaskToPage() {
+    let task = taskPlanner.taskManagerList[taskPlanner.taskManagerList.length - 1];
+    let rowData = document.createElement('td');
+    rowData.innerText = task.tName;
+    tableBody.appendChild(rowData);
+    rowData = document.createElement('td');
+    rowData.innerText = task.tDescription;
+    tableBody.appendChild(rowData);
+    // rowData = document.createElement('td');
+    // rowData.innerText = formValidateTaskAssignedTo.value;
+    // tableBody.appendChild(rowData);
+    // let itemOne = document.createElement("div");
+    // itemOne.innerText = formValidateTaskName.value;
 
-//
-// Update Task Information to main page 
-//
-let updateList = document.querySelector("task-list-update")
-let para = document.createElement("li");
-console.log(formValidateTaskName);
-// para.innerText = formValidateTaskName.textContent;
-// updateList.appendChild(para);
-// console.log(para);
-// console.log(formValidateTaskName.textContent);
-// console.log(document.createElement('p').innerHTML("Hello World!!"));
-// console.log(document.querySelector("#task-list-updated").appendChild(document.createElement('p').innerText("Hello World!!")));
-// console.log(document.querySelector("#task-list-updated").appendChild(document.createElement('p').innerText("Hello World!!")));
-// console.log(document.querySelector("#task-list-updated").appendChild(document.createElement('p').innerText("Hello World!!")));
-// console.log(document.querySelector("#task-list-updated").appendChild(document.createElement('p').innerText("Hello World!!")));
+}
