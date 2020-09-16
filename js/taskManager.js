@@ -1,6 +1,6 @@
 // Individual Task object class
 class taskObject {
-    constructor(tId = 0, tName, tDescription, tAssignee, tDate, tStatus) {
+    constructor(tId, tName, tDescription, tAssignee, tDate, tStatus) {
         this.tId = tId;
         this.tName = tName;
         this.tDescription = tDescription;
@@ -33,10 +33,10 @@ class taskManager {
     addTask(task) {
             return this.taskManagerList.push(task);
         }
-        // Function addTask updates taskManagerList with individual tasks
-    addTask(tname, tDescription, tAssignee, tDate) {
-            return this.taskManagerList.push(new taskObject(taskId++, tname, tDescription, tAssignee, tDate));
-        }
+        //     // Function addTask updates taskManagerList with individual tasks
+        // addTask(tname, tDescription, tAssignee, tDate) {
+        //         return this.taskManagerList.push(new taskObject(taskId++, tname, tDescription, tAssignee, tDate));
+        //     }
         // Function deleteTask deletes task from task list 
     deleteTask(task) {
             return this.taskManagerList.pop();
