@@ -102,9 +102,12 @@ formValidate.addEventListener("submit", (event) => {
     // ----------------------------------------------------------------------------------
     for (let idx = 0; idx < taskPlanner.taskManagerList.length; idx++) {
         let task = taskPlanner.taskManagerList[idx];
-        tableData += `<tr><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td></tr>`;
+        tableData += `<tr><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td><td><span id="clickable"><i class="far fa-check-circle"></i></span></td></tr>`;
     }
     tableBody.innerHTML = tableData;
+
+
+
 
     // Clear all form fields once user data has been processed 
     // ----------------------------------------------------------------------------------
@@ -124,3 +127,5 @@ formValidate.addEventListener("submit", (event) => {
 // tableBody.appendChild(rowData);
 // let itemOne = document.createElement("div");
 // itemOne.innerText = formValidateTaskName.value;
+
+// Add Event listerner to done clickable button on task list

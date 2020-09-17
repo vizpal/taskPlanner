@@ -99,6 +99,9 @@ tr {
     border-radius: 15px;
 }
 
+#clickable {
+    cursor: pointer
+}
 
 /* #table-body-data,
 tr,
