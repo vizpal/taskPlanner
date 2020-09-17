@@ -73,19 +73,19 @@
                         <option class="status" style="background-color:  #ffff80">In Progress</option>
                         <option class="status" style="background-color: #ff5050;">Problem</option>
                         <option class="status" style="background-color: #ff99ff;">To do</option>
-                    </select> 
+                    </select>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="form-validate-task-priority">Priority</label>
-                        <select class="form-control" id="form-validate-task-priority">   
+                    <select class="form-control" id="form-validate-task-priority">   
                             <option style="background-color: rgb(231, 61, 61);">High</option>
                             <option style="background-color: royalblue;">Medium</option>
                             <option style="background-color: salmon;">Low</option>
-                        </select> 
+                        </select>
                 </div>
             </div>
-            
-            
+
+
             <!-- <div class="form-group"> 
                 <label for="form-validate-task-dueDate">Due Date</label> 
                 <input type="date" id="form-validate-task-DueDate" class="form-control datepicker" name="date"> 
@@ -93,143 +93,144 @@
  -->
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Task Name needs to be 3 characters long or more</div>
-            <div class="form-row my-3"> 
+            <div class="form-row my-3">
                 <button class="btn btn-primary btn-block" type="submit"> Add Task </button>
             </div>
 
         </form>
     </div>
 
-        <hr>
+    <hr>
+    <hr>
+
+    <!-- Update Task List-->
+    <h2 class="board-heading">Task List</h3>
+        <div class="container-fluid task-list">
+            <table id="table-data" class="table table-hover">
+                <thead id="table-head-data" class="table-active">
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Description</th>
+                        <th>Assignee</th>
+                        <th>Due-Date</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="table-body-data"> </tbody>
+            </table>
+        </div>
         <hr>
 
-        <!-- Update Task List-->
-        <h2 class="board-heading">Task List</h3>
-            <div class="container-fluid task-list">
-                <table id="table-data" class="table table-hover">
-                    <thead id="table-head-data" class="table-active">
-                        <tr>
-                            <th>Task Name</th>
-                            <th>Description</th>
-                            <th>Assignee</th>
-                            <th>Due-Date</th>
-                            <th>Status</th>
-                            <th>Priority</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body-data"> </tbody>
-                </table>
+        <h2 class="board-heading">Kanban View</h2> <br><br><br>
+        <div class="layout-container d-flex container-fluid">
+            <!-- UNASSIGNED layout container-->
+            <div class="list-group unassigned-layout-container">
+                <h2 class="board-status-title-unassigned">Unassigned</h2><br>
+                <div class="card list-group-item list-group-item-secondary card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
+                    </div>
+                </div>
+                <div class="card list-group-item list-group-item-secondary card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
+                    </div>
+                </div>
+                <div class="card list-group-item list-group-item-secondary card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
+                    </div>
+                </div>
             </div>
-            <hr>
-
-            <h2 class="board-heading">Kanban View</h2> <br><br><br>
-            <div class="layout-container d-flex container-fluid">
-                <!-- UNASSIGNED layout container-->
-                <div class="list-group unassigned-layout-container">
-                    <h2 class="board-status-title-unassigned">Unassigned</h2><br>
-                    <div class="card list-group-item list-group-item-secondary card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
-                        </div>
-                    </div>
-                    <div class="card list-group-item list-group-item-secondary card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
-                        </div>
-                    </div>
-                    <div class="card list-group-item list-group-item-secondary card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
-                        </div>
+            <!-- ASSIGNED layout container-->
+            <div class="active-layout-container">
+                <h2 class="board-status-title-assigned">Active</h2><br>
+                <div class="card list-group-item list-group-item-primary card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
                     </div>
                 </div>
-                <!-- ASSIGNED layout container-->
-                <div class="active-layout-container">
-                    <h2 class="board-status-title-assigned">Active</h2><br>
-                    <div class="card list-group-item list-group-item-primary card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
-                        </div>
-                    </div>
-                    <div class="card list-group-item list-group-item-primary card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
-                        </div>
-                    </div>
-                    <div class="card list-group-item list-group-item-primary card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
-                        </div>
+                <div class="card list-group-item list-group-item-primary card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
                     </div>
                 </div>
-                <!-- INPROGRESS layout container-->
-                <div class="inprogress-layout-container">
-                    <h2 class="board-status-title-inprogress">Inprogress</h2><br>
-                    <div class="card list-group-item list-group-item-warning card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
-                        </div>
-                    </div>
-                    <div class="card list-group-item list-group-item-warning card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
-                        </div>
+                <div class="card list-group-item list-group-item-primary card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
                     </div>
                 </div>
-                <!-- COMPLETED layout container-->
-                <div class="completed-layout-container">
-                    <h2 class="board-status-title-completed">Completed</h2><br>
-                    <div class="card list-group-item list-group-item-success card-group">
-                        <div class="card-body">
-                            <div class="d-flex"> <i class="fas fa-thumbtack"></i>
-                                <h5 class="card-title">Task Item</h5>
-                                <hr> </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary task-action">Open</a> </div>
-                        </div>
+            </div>
+            <!-- INPROGRESS layout container-->
+            <div class="inprogress-layout-container">
+                <h2 class="board-status-title-inprogress">Inprogress</h2><br>
+                <div class="card list-group-item list-group-item-warning card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
                     </div>
                 </div>
-            </div> <br>
-            <hr>
-            <!-- <div class="task-container"> <div style="background:grey;"> <div class="flex-row btn btn-danger btn-lg mx-3" type="submit"><i class="fas fa-plus-circle px-2"></i>Add Task</div> <div class="text-right"><input type="text" placeholder="Filter.." name="filter" class="mr-2"></div> <div class="text-right btn-lg " type="submit"><i class="fas fa-sort-amount-down"></i>Sort</div> </div> </div> -->
-            <!--Scripts and Addons-->
-            <script src="./js/taskManager.js"></script>
-            <script src="./js/index.js"></script>
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+                <div class="card list-group-item list-group-item-warning card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary">Open</a> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- COMPLETED layout container-->
+            <div class="completed-layout-container">
+                <h2 class="board-status-title-completed">Completed</h2><br>
+                <div class="card list-group-item list-group-item-success card-group">
+                    <div class="card-body">
+                        <div class="d-flex"> <i class="fas fa-thumbtack"></i>
+                            <h5 class="card-title">Task Item</h5>
+                            <hr> </div>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div> <i class="fab fa-stack-exchange"></i> <i class="fas fa-theater-masks"></i> <a href="#" class="btn btn-primary task-action">Open</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div> <br>
+        <hr>
+        <!-- <div class="task-container"> <div style="background:grey;"> <div class="flex-row btn btn-danger btn-lg mx-3" type="submit"><i class="fas fa-plus-circle px-2"></i>Add Task</div> <div class="text-right"><input type="text" placeholder="Filter.." name="filter" class="mr-2"></div> <div class="text-right btn-lg " type="submit"><i class="fas fa-sort-amount-down"></i>Sort</div> </div> </div> -->
+        <!--Scripts and Addons-->
+        <script src="./js/taskManager.js"></script>
+        <script src="./js/index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 <!--Social Media Links-->
 <footer class="footer">
