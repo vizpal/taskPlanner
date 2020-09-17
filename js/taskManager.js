@@ -46,7 +46,7 @@ class taskManager {
             for (let i = 0; i < this.taskManagerList.length; i++) {
                 if (i.Id == taskId) i.tStatus = status
             }
-            return this.taskManagerList;
+            return this.taskManagerList; 
         }
         // Function assignTask updates assignee to task
     assignTask(taskId, assignee) {

@@ -40,6 +40,7 @@
             </div>
         </div>
     </form>
+
     <hr>
     <!-- Form Fields with Bootstrap Validation-->
     <h2 class="board-heading">Add Task</h2>
@@ -57,13 +58,47 @@
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Assignee needs to be 8 characters long or more</div>
             </div>
-            <div class="form-group"> <label for="form-validate-task-dueDate">Due Date</label> <input type="date" id="form-validate-task-DueDate" class="form-control datepicker" name="date"> </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="duedate">Due date</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Status">Status</label>
+                    <!-- <select class="form-control">
+                        <option class="status" style="background-color: cornflowerblue;">Review</option>
+                        <option class="status" style="background-color: #80ff80;">Done</option>
+                        <option class="status" style="background-color:  #ffff80">In Progress</option>
+                        <option class="status" style="background-color: #ff5050;">Problem</option>
+                        <option class="status" style="background-color: #ff99ff;">To do</option>
+                    </select> -->
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="priority">Priority</label>
+                        <!-- <select class="form-control">   
+                            <option style="background-color: rgb(231, 61, 61);">High</option>
+                            <option style="background-color: royalblue;">Medium</option>
+                            <option style="background-color: salmon;">Low</option>
+                        </select> -->
+                </div>
+            </div>
+            
+            
+            <!-- <div class="form-group"> 
+                <label for="form-validate-task-dueDate">Due Date</label> 
+                <input type="date" id="form-validate-task-DueDate" class="form-control datepicker" name="date"> 
+            </div> 
+ -->
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Task Name needs to be 3 characters long or more</div>
-            <div class="form-row my-3"> <button class="btn btn-primary btn-block" type="submit"> Add Task </button>
-                <div>
+            <div class="form-row my-3"> 
+                <button class="btn btn-primary btn-block" type="submit"> Add Task </button>
+            </div>
+
         </form>
-        </div>
+    </div>
+
         <hr>
         <hr>
 
