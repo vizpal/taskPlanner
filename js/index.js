@@ -3,6 +3,8 @@ const formValidateTaskName = document.querySelector('#form-validate-task-name');
 const formValidateTaskDescription = document.querySelector('#form-validate-task-description');
 const formValidateTaskAssignedTo = document.querySelector('#form-validate-task-assignedTo');
 const formValidateTaskDueDate = document.querySelector('#form-validate-task-DueDate');
+const formValidateTaskStatus = document.querySelector('#form-validate-task-status');
+const formValidateTaskPriority = document.querySelector('#form-validate-task-priority');
 let tableData = "";
 let validationFail = 0;
 
@@ -14,6 +16,8 @@ let clearFields = () => {
     formValidateTaskDescription.value = "";
     formValidateTaskAssignedTo.value = "";
     formValidateTaskDueDate.value = "";
+    formValidateTaskStatus.value = "";
+    formValidateTaskPriority.value = "";
     formValidateTaskName.classList.remove('is-valid');
     formValidateTaskDescription.classList.remove('is-valid');
     formValidateTaskAssignedTo.classList.remove('is-valid');
@@ -32,6 +36,9 @@ formValidate.addEventListener("submit", (event) => {
     console.log("Task Name :", formValidateTaskName.value.length);
     console.log("Task Description :", formValidateTaskDescription.value.length);
     console.log("Task Assigned To :", formValidateTaskAssignedTo.value.length);
+    console.log("Task Due Date :", formValidateTaskDueDate.value);
+    console.log("Task Status:", formValidateTaskStatus.value);
+    console.log("Task Priority:", formValidateTaskPriority.value);
 
     // Form validation for Task Name Field for min length 8
     if (formValidateTaskName.value.length > 8) {
@@ -84,7 +91,9 @@ formValidate.addEventListener("submit", (event) => {
         formValidateTaskDescription.value,
         formValidateTaskAssignedTo.value,
         formValidateTaskDueDate.value,
-        "ASSIGNED");
+        formValidateTaskStatus.value,
+        formValidateTaskPriority.value);
+
     taskPlanner.addTask(newTask);
 
     // Update table row with row data generated through the taskObject
@@ -93,7 +102,7 @@ formValidate.addEventListener("submit", (event) => {
     // ----------------------------------------------------------------------------------
     for (let idx = 0; idx < taskPlanner.taskManagerList.length; idx++) {
         let task = taskPlanner.taskManagerList[idx];
-        tableData += `<tr><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td></tr>`;
+        tableData += `<tr><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td></tr>`;
     }
     tableBody.innerHTML = tableData;
 
