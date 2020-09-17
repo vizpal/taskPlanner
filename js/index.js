@@ -102,7 +102,7 @@ formValidate.addEventListener("submit", (event) => {
     // ----------------------------------------------------------------------------------
     for (let idx = 0; idx < taskPlanner.taskManagerList.length; idx++) {
         let task = taskPlanner.taskManagerList[idx];
-        tableData += `<tr><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td></tr>`;
+        tableData += `<tr><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td><td><i class="btn btn-outline-success far fa-check-circle done-button" title="Mark as DONE"></i></td></tr>`;
     }
     tableBody.innerHTML = tableData;
 
