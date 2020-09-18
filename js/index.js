@@ -20,12 +20,10 @@ let clearFields = () => {
     formValidateTaskDescription.value = "";
     formValidateTaskAssignedTo.value = "";
     formValidateTaskDueDate.value = "";
-    formValidateTaskStatus.value = "";
-    formValidateTaskPriority.value = "";
     formValidateTaskName.classList.remove('is-valid');
     formValidateTaskDescription.classList.remove('is-valid');
     formValidateTaskAssignedTo.classList.remove('is-valid');
-}
+} 
 
 // Update table row with row data generated through the taskObject
 // Table updates everytime new the Add Task button is pressed by user.
@@ -119,7 +117,7 @@ formValidate.addEventListener("submit", (event) => {
 
     // Clear all form fields once user data has been processed 
     // ----------------------------------------------------------------------------------
-    clearFields();
+    clearFields(); 
 });
 
 const taskList = document.querySelector('#table-data');
