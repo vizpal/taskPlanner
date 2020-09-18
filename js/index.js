@@ -29,15 +29,21 @@ let clearFields = () => {
 // Table updates everytime new the Add Task button is pressed by user.
 // Generated tableDate is added to tableBody element
 // ----------------------------------------------------------------------------------
-let renderPage = (taskPlanner, clearFlag) => {
-        console.log(`=============== RENDER ${clearFlag} ===================`)
+let renderPage = (taskPlanner) => {
+        console.log(`=============== RENDER HTML ===================`)
         console.log(taskPlanner);
-        if (clearFlag === "true") tableData = [];
+        tableData = [];
         for (let idx = 0; idx < taskPlanner.taskManagerList.length; idx++) {
             let task = taskPlanner.taskManagerList[idx];
-            tableData += `<tr data-task-id=${task.tId}><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td><td><i class="btn btn-outline-success far fa-check-circle done-button" title="Mark as DONE"></i></td></tr>`;
+            tableData += `<tr data-task-id=${task.tId}><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td><td><i class="btn btn-outline-success far fa-check-circle done-button ${(task.tStatus=="Done")?"invisible":"visible"}" title="Mark as DONE"></i></td></tr>`;
         }
         tableBody.innerHTML = tableData;
+
+        // Set table row color to green for status DONE tasks.
+        document.querySelectorAll('tr').forEach((item) => {
+            // cells[4] represents the 4th column of the rendered table corresponds to "status"
+            if (item.cells[4].outerText == "Done") item.style.backgroundColor = "#DCFEC6";
+        });
     }
     // EventListner for Submit Button for adding task. This task is 
     // responsible for processing/validating the form data.
@@ -113,7 +119,7 @@ formValidate.addEventListener("submit", (event) => {
 
     // Render new task to page 
     // ----------------------------------------------------------------------------------
-    renderPage(taskPlanner, 'true');
+    renderPage(taskPlanner);
 
     // Clear all form fields once user data has been processed 
     // ----------------------------------------------------------------------------------
@@ -129,6 +135,6 @@ taskList.addEventListener("click", (event) => {
         const parentTask = event.target.parentElement.parentElement;
         const gotTaskId = parentTask.dataset.taskId;
         taskPlanner.getTaskById(gotTaskId).tStatus = 'Done';
-        renderPage(taskPlanner, 'true');
+        renderPage(taskPlanner);
     }
 });
