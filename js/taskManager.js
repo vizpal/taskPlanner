@@ -19,8 +19,16 @@ class taskManager {
 
     // Function getAllTasks retruns list of all tasks
     getAllTasks() {
-            if (this.taskManagerList.length == 0) alert("Empty taskManagerList !!")
-            else return this.taskManagerList;
+        if (this.taskManagerList.length == 0) alert("Empty taskManagerList !!")
+        else return this.taskManagerList;
+    }
+
+    // Return the task when requested using an ID field 
+    getTaskById(id) {
+            for (let i = 0; i < this.taskManagerList.length; i++) {
+                if (this.taskManagerList[i].tId == id) return this.taskManagerList[i];
+                else console.log(`id:${id} not found in TaskList.`)
+            }
         }
         // Function getTasksWithStatus returns list with specified status
         // getTasksWithStatus(status) {
@@ -32,13 +40,10 @@ class taskManager {
         //     }
         // Function addTask adds task to back of aray object
     addTask(task) {
-            return this.taskManagerList.push(task);
-        }
-        //     // Function addTask updates taskManagerList with individual tasks
-        // addTask(tname, tDescription, tAssignee, tDate) {
-        //         return this.taskManagerList.push(new taskObject(taskId++, tname, tDescription, tAssignee, tDate));
-        //     }
-        // Function deleteTask deletes task from task list
+        return this.taskManagerList.push(task);
+    }
+
+    // Function deleteTask deletes task from task list
     deleteTask(task) {
             return this.taskManagerList.pop();
         }

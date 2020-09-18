@@ -1,3 +1,4 @@
+const tableBody = document.querySelector("#table-body-data");
 const formValidate = document.querySelector('#form-validate');
 const formValidateTaskName = document.querySelector('#form-validate-task-name');
 const formValidateTaskDescription = document.querySelector('#form-validate-task-description');
@@ -7,6 +8,9 @@ const formValidateTaskStatus = document.querySelector('#form-validate-task-statu
 const formValidateTaskPriority = document.querySelector('#form-validate-task-priority');
 let tableData = "";
 let validationFail = 0;
+let taskId = 0;
+let storeTaskPlanner;
+let taskPlanner = new taskManager;
 
 // Function clears all Form fields and sets to empty
 // Function also clears the validation status.
@@ -23,14 +27,28 @@ let clearFields = () => {
     formValidateTaskAssignedTo.classList.remove('is-valid');
 }
 
-// EventListner for Submit Button for adding task. This task is 
-// responsible for processing/validating the form data.
-// Validation Requirements:  
-//      Name -> Not Empty and longer than 8 characters
-//      Description -> Not Empty and longer than 15 characters
-//      AssignedTo -> Not Empty and longer than 8 characters
-//      DueDate  -> Not Empty and not in the past
+// Update table row with row data generated through the taskObject
+// Table updates everytime new the Add Task button is pressed by user.
+// Generated tableDate is added to tableBody element
 // ----------------------------------------------------------------------------------
+let renderPage = (taskPlanner, clearFlag) => {
+        console.log(`=============== RENDER ${clearFlag} ===================`)
+        console.log(taskPlanner);
+        if (clearFlag === "true") tableData = [];
+        for (let idx = 0; idx < taskPlanner.taskManagerList.length; idx++) {
+            let task = taskPlanner.taskManagerList[idx];
+            tableData += `<tr data-task-id=${task.tId}><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td><td><i class="btn btn-outline-success far fa-check-circle done-button" title="Mark as DONE"></i></td></tr>`;
+        }
+        tableBody.innerHTML = tableData;
+    }
+    // EventListner for Submit Button for adding task. This task is 
+    // responsible for processing/validating the form data.
+    // Validation Requirements:  
+    //      Name -> Not Empty and longer than 8 characters
+    //      Description -> Not Empty and longer than 15 characters
+    //      AssignedTo -> Not Empty and longer than 8 characters
+    //      DueDate  -> Not Empty and not in the past
+    // ----------------------------------------------------------------------------------
 formValidate.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("Task Name :", formValidateTaskName.value.length);
@@ -84,48 +102,35 @@ formValidate.addEventListener("submit", (event) => {
     // task object to the taskManager array list. The taskManager array
     // elements will hold individual tasks 
     // ----------------------------------------------------------------------------------
-    let tableBody = document.querySelector("#table-body-data");
-    let taskPlanner = new taskManager;
-    let newTask = new taskObject(0,
+    let newTask = new taskObject(taskId,
         formValidateTaskName.value,
         formValidateTaskDescription.value,
         formValidateTaskAssignedTo.value,
         formValidateTaskDueDate.value,
         formValidateTaskStatus.value,
         formValidateTaskPriority.value);
-
+    taskId++;
     taskPlanner.addTask(newTask);
 
-    // Update table row with row data generated through the taskObject
-    // Table updates everytime new the Add Task button is pressed by user.
-    // Generated tableDate is added to tableBody element
+
+    // Render new task to page 
     // ----------------------------------------------------------------------------------
-    for (let idx = 0; idx < taskPlanner.taskManagerList.length; idx++) {
-        let task = taskPlanner.taskManagerList[idx];
-        tableData += `<tr><td>${task.tName}</td><td>${task.tDescription}</td><td>${task.tAssignee}</td><td>${task.tDate}</td><td>${task.tStatus}</td><td>${task.tPriority}</td><td><i class="btn btn-outline-success far fa-check-circle done-button" title="Mark as DONE"></i></td></tr>`;
-    }
-    tableBody.innerHTML = tableData;
-
-
-
+    renderPage(taskPlanner, 'true');
 
     // Clear all form fields once user data has been processed 
     // ----------------------------------------------------------------------------------
     clearFields();
 });
 
-// function updateTaskToPage() {
-//     let task = taskPlanner.taskManagerList[taskPlanner.taskManagerList.length - 1];
-//     let rowData = document.createElement('td');
-//     rowData.innerText = task.tName;
-//     tableBody.appendChild(rowData);
-//     rowData = document.createElement('td');
-//     rowData.innerText = task.tDescription;
-//     tableBody.appendChild(rowData);
-// rowData = document.createElement('td');
-// rowData.innerText = formValidateTaskAssignedTo.value;
-// tableBody.appendChild(rowData);
-// let itemOne = document.createElement("div");
-// itemOne.innerText = formValidateTaskName.value;
-
-// Add Event listerner to done clickable button on task list
+const taskList = document.querySelector('#table-data');
+// Add singular event listner to traverse the DOM when the 
+// mark-as-done button has been clicked
+// ----------------------------------------------------------------------------------
+taskList.addEventListener("click", (event) => {
+    if (event.target.classList.contains('done-button')) {
+        const parentTask = event.target.parentElement.parentElement;
+        const gotTaskId = parentTask.dataset.taskId;
+        taskPlanner.getTaskById(gotTaskId).tStatus = 'Done';
+        renderPage(taskPlanner, 'true');
+    }
+});
