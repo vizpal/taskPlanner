@@ -31,6 +31,7 @@
 
 .btn {
     float: right;
+    border-radius: 1.5rem;
 }
 
 .card-title {
@@ -102,6 +103,23 @@ tr {
 #clickable {
     cursor: pointer
 }
+
+
+/* overide bootstrap btn-outline-success */
+
+.btn-outline-success {
+    /* border-color: #28a745;  */
+    border-color: transparent;
+}
+
+
+/* overide bootstrap btn-outline-danger */
+
+.btn-outline-danger {
+    /* border-color: #28a745;  */
+    border-color: transparent;
+}
+
 
 /* #table-body-data,
 tr,

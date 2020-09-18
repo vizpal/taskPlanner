@@ -25,9 +25,18 @@ class taskManager {
 
     // Return the task when requested using an ID field 
     getTaskById(id) {
+        for (let i = 0; i < this.taskManagerList.length; i++) {
+            if (this.taskManagerList[i].tId == id) return this.taskManagerList[i];
+            else console.log(`id:${id} not found in TaskList.`)
+        }
+    }
+
+    // Return the task when requested using an ID field 
+    deleteTaskById(id) {
             for (let i = 0; i < this.taskManagerList.length; i++) {
-                if (this.taskManagerList[i].tId == id) return this.taskManagerList[i];
-                else console.log(`id:${id} not found in TaskList.`)
+                if (this.taskManagerList[i].tId == id) {
+                    return this.taskManagerList.splice(i, 1);
+                } else console.log(`id:${id} not found in TaskList.`);
             }
         }
         // Function getTasksWithStatus returns list with specified status
