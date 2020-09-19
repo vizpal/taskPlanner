@@ -121,6 +121,14 @@ tr {
 }
 
 
+/* overide bootstrap btn-outline-primary*/
+
+.btn-outline-primary {
+    /* border-color: #28a745;  */
+    border-color: transparent;
+}
+
+
 /* #table-body-data,
 tr,
 td {

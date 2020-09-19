@@ -42,8 +42,9 @@ let renderPage = (taskPlanner) => {
                             <td>${task.tDate}</td>
                             <td>${task.tStatus}</td>
                             <td>${task.tPriority}</td>
-                            <td><i class="btn btn-outline-success far fa-check-circle done-button ${(task.tStatus=="Done")?"invisible":"visible"}" title="Mark as Done"></i>
-                                <i class="btn btn-outline-danger far fa-times-circle delete-button" title="Delete Task"></i>
+                            <td><i class="btn btn-outline-danger far fa-times-circle delete-button" title="Delete Task"></i>
+                                <i class="btn btn-outline-success far fa-check-circle done-button ${(task.tStatus=="Done")?"invisible":"visible"}" title="Mark as Done"></i>
+                                <i class="btn btn-outline-primary far fa-keyboard edit-button" title="Edit Task"></i>
                             </td>
                         </tr>`;
         }
@@ -133,7 +134,7 @@ formValidate.addEventListener("submit", (event) => {
 
     // Clear all form fields once user data has been processed 
     // ----------------------------------------------------------------------------------
-    clearFields();
+    // clearFields();
 });
 
 const taskList = document.querySelector('#table-data');
