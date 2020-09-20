@@ -156,3 +156,18 @@ taskList.addEventListener("click", (event) => {
         renderPage(taskPlanner);
     }
 });
+
+const darkMode = document.getElementById("toggle-dark-mode");
+// Add darkmode togglr button to navbar with fa icon switcher.  
+// Event listner also adds class based on darmode value
+// ----------------------------------------------------------------------------------
+// TODO: Add CSS transition effect 
+darkMode.addEventListener('click', (event) => {
+    if (event.target.classList.contains("fa-sun")) {
+        event.target.classList.remove("fa-sun");
+        event.target.classList.add("fa-moon");
+    } else if (event.target.classList.contains("fa-moon")) {
+        event.target.classList.remove("fa-moon");
+        event.target.classList.add("fa-sun");
+    }
+});
