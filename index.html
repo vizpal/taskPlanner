@@ -53,26 +53,26 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="form-validate-task-DueDate">Due date</label>
-                    <input type="date" class="form-control" id="form-validate-task-DueDate">
+                    <input type="date" required class="form-control" id="form-validate-task-DueDate">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="form-validate-task-status">Status</label>
                     <select class="form-control" id="form-validate-task-status">
-                        <option style="background-color: grey;">Work status</option>
-                        <option style="background-color: cornflowerblue;">Review</option>
-                        <option style="background-color: #80ff80;">Done</option>
-                        <option style="background-color:  #ffff80">In Progress</option>
-                        <option style="background-color: #ff5050;">Problem</option>
-                        <option style="background-color: #ff99ff;">To do</option>
+                        <option default disabled selected value>---Select Work Status---</option>
+                        <option>Review</option>
+                        <option>Done</option>
+                        <option>In Progress</option>
+                        <option>Problem</option>
+                        <option>To do</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="form-validate-task-priority">Priority</label>
                     <select class="form-control" id="form-validate-task-priority">
-                            <option style="background-color: grey;">Priority</option> 
-                            <option style="background-color: rgb(231, 61, 61);">High</option>
-                            <option style="background-color: royalblue;">Medium</option>
-                            <option style="background-color: salmon;">Low</option>
+                            <option default disabled selected value>---Select Priority Status---</option> 
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
                     </select>
                 </div>
             </div>
