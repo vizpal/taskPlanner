@@ -7,9 +7,16 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/90ba9e1559.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600;1,700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> </head>
 
 <body>
+    <div class="alert alert-success alert-dismissible fade show col-xs-3" role="alert">
+        <p>Local Storage data detected. What would you like to do ? </p>
+        <button class="btn btn-xs btn-space btn-success pull-right close" data-dismiss="alert">Load LocalStoarage</button>
+        <button class="btn btn-xs btn-space btn-danger pull-right close" data-dismiss="alert">Clear LocalStoarage</button>
+    </div>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid"> <a href="#" class="navbar-brand"><i class="fas fa-laptop-code"></i></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"></button>
@@ -24,23 +31,6 @@
             </div>
     </nav>
     </div>
-    <div class="task-container">
-        <form class="form-inline my-2"> <i class="fas fa-plus-circle px-2"></i>Add Task <input class="justify-content-right form-control mr-sm-2" type="text" placeholder="Filter.." aria-label="Filter"> <button class="justify-content-right btn btn-outline-success my-2 my-sm-0" type="text">Search</button>            </form>
-    </div>
-    <!--form field-->
-    <form>
-        <div class="container-fluid">
-            <div class="form-group row">
-                <div class="col-sm-4"> <label for="task-planner">Task Planner</label> <i class="fa fa-minus-square"></i> <input type="text" class="form-control" placeholder="Task Planner" name="task-planner">
-                    <!-- <input type="task-planner" class="form-control" placeholder="Task Planner" class="task-planner" name="task-planner"> <input type="task-planner" class="form-control" placeholder="Task Planner" class="task-planner" name="task-planner"> <input type="task-planner" class="form-control" placeholder="Task Planner" class="task-planner" name="task-planner"> --></div>
-                <div class="col-sm-2"> <label for="owner">Owner</label> <input type="text" class="form-control" placeholder="Owner" class="owner" name="owner">
-                    <!-- <input type="owner" class="form-control" placeholder="Owner" class="owner" name="owner"> <input type="owner" class="form-control" placeholder="Owner" class="owner" name="owner"> <input type="owner" class="form-control" placeholder="Owner" class="owner" name="owner"> --></div>
-                <div class="col-sm-2"> <label for="status">Status</label> <select class="form-control"> <option class="status" style="background-color: cornflowerblue;">Review</option> <option class="status" style="background-color: #80ff80;">Done</option> <option class="status" style="background-color: #ffff80">In Progress</option> <option class="status" style="background-color: #ff5050;">Problem</option> <option class="status" style="background-color: #ff99ff;">To do</option> </select>                    </div>
-                <div class="col-sm-2"> <label for="due-date">Due Date</label> <input type="date" class="form-control" placeholder="Due Date" id="due-date" name="due-date"> </div>
-                <div class="col-sm-2"> <label for="priority">Priority</label> <select class="form-control" id="FormControlSelect2"> <option class="dropdown-item" href="#" style="background-color: rgb(231, 61, 61);">High</option> <option class="dropdown-item" href="#" style="background-color: royalblue;">Medium</option> <option class="dropdown-item" href="#" style="background-color: salmon;">Low</option> </select>                    </div>
-            </div>
-        </div>
-    </form>
 
     <hr>
     <!-- Form Fields with Bootstrap Validation-->
