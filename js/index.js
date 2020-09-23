@@ -12,6 +12,7 @@ let taskId = 0;
 let storeTaskPlanner;
 let taskPlanner = new taskManager;
 
+
 // Function clears all Form fields and sets to empty
 // Function also clears the validation status.
 // ----------------------------------------------------------------------------------
@@ -53,7 +54,7 @@ let renderPage = (taskPlanner) => {
         // Set table row color to green for status DONE tasks.
         document.querySelectorAll('tr').forEach((item) => {
             // cells[4] represents the 4th column of the rendered table corresponds to "status"
-            if (item.cells[4].outerText == "Done") item.style.backgroundColor = "#DCFEC6";
+            if (item.cells[4].outerText == "Done") item.style.backgroundColor = "#CAF6CA";
         });
     }
     // EventListner for Submit Button for adding task. This task is 
@@ -128,6 +129,10 @@ formValidate.addEventListener("submit", (event) => {
     taskPlanner.addTask(newTask);
 
 
+    // Save to Local Storage 
+    // ----------------------------------------------------------------------------------
+    taskPlanner.save(taskId - 1);
+
     // Render new task to page 
     // ----------------------------------------------------------------------------------
     renderPage(taskPlanner);
@@ -146,6 +151,7 @@ taskList.addEventListener("click", (event) => {
         const parentTask = event.target.parentElement.parentElement;
         const gotTaskId = parentTask.dataset.taskId;
         taskPlanner.getTaskById(gotTaskId).tStatus = 'Done';
+        taskPlanner.save(gotTaskId);
         renderPage(taskPlanner);
     }
 
@@ -153,6 +159,7 @@ taskList.addEventListener("click", (event) => {
         const parentTask = event.target.parentElement.parentElement;
         const gotTaskId = parentTask.dataset.taskId;
         taskPlanner.deleteTaskById(gotTaskId);
+        taskPlanner.save(gotTaskId);
         renderPage(taskPlanner);
     }
 });
@@ -171,3 +178,11 @@ darkMode.addEventListener('click', (event) => {
         event.target.classList.add("fa-sun");
     }
 });
+
+
+if (typeof localStorage !== 'undefined') {
+    taskPlanner.load();
+    renderPage(taskPlanner);
+} else {
+    console.log("------- LocalStorage is Undefined -------");
+}
