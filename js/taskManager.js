@@ -70,4 +70,28 @@ class taskManager {
         }
         return this.taskManagerList;
     }
+
+    save(currentId) {
+        console.log("------- Saving Task and Id --------- ")
+        window.localStorage.setItem('tasks', JSON.stringify(this.taskManagerList));
+
+        // Store the currentId in localStorage
+        window.localStorage.setItem('currentId', String(currentId));
+    }
+
+    load() {
+        // Check if any tasks are saved in localStorage
+        if (window.localStorage.getItem('tasks')) {
+            // Convert it to an array and store it in our TaskManager
+            console.log("------- Load Task --------- ")
+            this.taskManagerList = JSON.parse(localStorage.getItem('tasks'));
+            console.log(this.taskManagerList);
+        }
+
+        // Check if the currentId is saved in localStorage
+        if (window.localStorage.getItem('currentId')) {
+            // Convert the currentId to a number and store it in our TaskManager
+            this.tId = Number(window.localStorage.getItem('currentId'));
+        }
+    }
 }
