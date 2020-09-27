@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600;1,700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css"> 
+</head>
 
 <body>
     <div class="alert alert-success alert-dismissible fade show col-xs-3" role="alert">
@@ -114,42 +115,73 @@
             </table>
         </div>
 
-    <!--Modal box-->
 
-    <div class="modal-bg" id="id01">  
-        <div class = "modal">  
-        <h4>Edit Task List</h4>  
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-               <label for="form-validate-task-name">Task Name</label> 
-                 <input type="text" placeholder="Task Name">  
-                 <label for="form-validate-task-description">Task Description</label>  
-                 <input type="text" placeholder="Task Description">  
-                  <label for="form-validate-task-assignedTo">Assignee</label>  
-                  <input type="text" placeholder="Assign User Name"> 
-                  <label for="form-validate-task-DueDate">Due date</label>  
-                 <input type="date" required name="date">   
-                 <label for="form-validate-task-status">Status</label>  
-                         <select> 
-                             <option default disabled selected value>---Select Work Status---</option>  
-                             <option>Review</option>  
-                             <option>Done</option>  
-                             <option>In Progress</option> 
-                             <option>Problem</option> 
-                             <option>To do</option>  
-                          </select>  
-        
-                  <label for="form-validate-task-priority">Priority</label>  
-                         <select>  
-                             <option default disabled selected value>---Select Priority Status---</option>
-                             <option>High</option>  
-                             <option>Medium</option>  
-                             <option>Low</option>  
-                          </select>  
-              <button>Save</button>  
-             
-         
-         </div> 
-    </div>
+<!-- Modal Box -->
+  
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+             <div class="modal-content"> 
+                    <div class="modal-header"> 
+                        <h5 class="modal-edit" id="edit-task">Edit</h5> 
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+                            <span aria-hidden="true">&times;</span> 
+                        </button>   
+                    </div> 
+                    <div class="modal-body"> 
+                        <form id="modal-validate" class="needs-validation" novalidation> 
+                            <div class="form-group">  
+                                <label for="form-validate-task-name">Task Name</label>   
+                                <input type="text" id="modal-validate-task-name" class="form-control" placeholder="Task Name (minimum 8 characters long)" required>
+                                <div class="valid-feedback">Looks good!</div> 
+                                <div class="invalid-feedback">Task Name needs to be 8 characters long or more</div> 
+                            </div> 
+                            <div class="form-group">  
+                                <label for="form-validate-task-description">Task Description</label>  
+                                <input type="text" id="modal-validate-task-description" class="form-control" placeholder="Task Description (minimum 15 characters long)">
+                                <div class="valid-feedback">Looks good!</div> 
+                                <div class="invalid-feedback">Task Description needs to be 15 characters long or more</div>
+                            </div> 
+                            <div class="form-group">  
+                                <label for="form-validate-task-assignedTo">Assignee</label>  
+                                <input type="text" id="modal-validate-task-assignedTo" class="form-control" placeholder="Assign User Name (minimum 8 characters long)"> 
+                                <div class="valid-feedback">Looks good!</div> 
+                                <div class="invalid-feedback">Task Assignee needs to be 8 characters long or more</div> 
+                            </div> 
+                            <div class="form-group"> 
+                                <label for="form-validate-task-DueDate">Due date</label> 
+                                <input type="date" required class="form-control" id="modal-validate-task-DueDate"> 
+                            </div> 
+                            <div class="form-group"> 
+                                <label for="form-validate-task-status">Status</label> 
+                                    <select class="form-control" id="modal-validate-task-status"> 
+                                        <option default disabled selected value>---Select Work Status---</option> 
+                                        <option>Review</option> 
+                                        <option>Done</option> 
+                                        <option>In Progress</option> 
+                                        <option>Problem</option> 
+                                        <option>To do</option> 
+                                    </select> 
+                            </div> 
+                            <div class="form-group">
+                                <label for="form-validate-task-priority">Priority</label> 
+                                    <select class="form-control" id="modal-validate-task-priority"> 
+                                        <option default disabled selected value>---Select Priority Status---</option>  
+                                        <option>High</option> 
+                                        <option>Medium</option> 
+                                        <option>Low</option> 
+                                    </select> 
+                            </div>
+                        </form> 
+                    </div> 
+                    
+                    <div class="modal-footer"> 
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Save</button> 
+                    </div>
+             </div> 
+        </div> 
+    </div> 
+
+
 
 
         <!--Scripts and Addons-->
@@ -161,7 +193,7 @@
 </body>
 <!--Social Media Links-->
 <footer class="footer">
-    <div class="container text-center col-md-3 col-sm-4 p-4" style="font-size: 4rem;"> <a href="#"><i class="fa fa-facebook mx-4"></i></a> <a href="#"><i class="fa fa-twitter mx-4"></i></a> <a href="#"><i class="fa fa-linkedin mx-4"></i></a> </div>
+    <div class="container text-center col-sm-4 p-4" style="font-size: 3rem;"> <a href="#"><i class="fa fa-facebook mx-4"></i></a> <a href="#"><i class="fa fa-twitter mx-4"></i></a> <a href="#"><i class="fa fa-linkedin mx-4"></i></a> </div>
 </footer>
 
 </html>

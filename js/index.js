@@ -47,7 +47,7 @@ let renderPage = (taskPlanner) => {
                             <td>${task.tPriority}</td>
                             <td><i class="btn btn-outline-danger far fa-times-circle delete-button" title="Delete Task"></i>
                                 <i class="btn btn-outline-success far fa-check-circle done-button ${(task.tStatus=="Done")?"invisible":"visible"}" title="Mark as Done"></i>
-                                <i class="btn btn-outline-primary far fa-keyboard edit-button" title="Edit Task"></i>
+                                <i class="btn btn-outline-primary far fa-keyboard edit-button" data-toggle="modal" data-target="#myModal" title="Edit Task"></i>
                             </td>
                         </tr>`;
         }
@@ -57,6 +57,12 @@ let renderPage = (taskPlanner) => {
         document.querySelectorAll('tr').forEach((item) => {
             // cells[4] represents the 4th column of the rendered table corresponds to "status"
             if (item.cells[4].outerText == "Done") item.style.backgroundColor = "#CAF6CA";
+        });
+
+         // Set table row color to red for status high priority tasks.
+        document.querySelectorAll('tr').forEach((item) => {
+            // cells[5] represents the 5th column of the rendered table corresponds to "priority"
+            if (item.cells[5].outerText == "High") item.style.backgroundColor = "#F64A66";
         });
     }
     // EventListner for Submit Button for adding task. This task is 
@@ -164,6 +170,15 @@ taskList.addEventListener("click", (event) => {
         taskPlanner.save(gotTaskId);
         renderPage(taskPlanner);
     }
+
+    if (event.target.classList.contains('edit-button')) {
+        const parentTask = event.target.parentElement.parentElement;
+        const gotTaskId = parentTask.dataset.taskId;
+        taskPlanner.editTaskById(gotTaskId);
+        taskPlanner.save(gotTaskId);
+        renderPage(taskPlanner);
+    }
+    
 });
 
 const darkMode = document.getElementById("toggle-dark-mode");

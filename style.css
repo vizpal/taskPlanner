@@ -2,6 +2,7 @@ body {
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto', sans-serif;
+    background-image: radial-gradient(circle, #ebebe9, #efefe9, #f4f3e9, #f9f6e9, #fefae9);
 }
 
 .darkmode {
@@ -195,54 +196,3 @@ th {
     color: black;
     font-style: bold;
 } */
-
-.modal-bg{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center !Important;
-    align-items: center !Important;
-}
-
-
-.modal{
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(253, 245, 236);
-    width: 30%;
-    height: 65%;
-    padding-top: 0.05%;
-    padding-bottom: 0.5%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-
-}
-
-.modal button{
-    width: 5%;
-    height: 5%;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(83, 55, 245);
-    color: antiquewhite;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-}
-
-/* The Modal Close Button (x) */
-.close {
-    position: absolute;
-    right: 450px;
-    top: 88px;
-    font-size: 30px;
-    /* font-weight: bold; */
-    color: #000000;
-  }
