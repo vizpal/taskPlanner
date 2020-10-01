@@ -62,7 +62,7 @@ let renderPage = (taskPlanner) => {
          // Set table row color to red for status high priority tasks.
         document.querySelectorAll('tr').forEach((item) => {
             // cells[5] represents the 5th column of the rendered table corresponds to "priority"
-            if (item.cells[5].outerText == "High") item.style.backgroundColor = "#F64A66";
+            if (item.cells[5].outerText == "High") item.style.backgroundColor = "#fcd5ce";
         });
     }
     // EventListner for Submit Button for adding task. This task is 
