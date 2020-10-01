@@ -25,7 +25,7 @@ describe('TaskManager', () => {
                 const tskManager = new taskManager();
                 let taskToDelete, task;
                 for (let i = 0; i < 10; i++) {
-                    if (i == 5) {
+                    if (i == 4) {
                         taskToDelete = new taskObject(i, 'Dummy', 'Dummy', 'Dummy', '1/1/2020', '', '');
                         tskManager.addTask(taskToDelete);
 
@@ -36,6 +36,27 @@ describe('TaskManager', () => {
                 }
                 tskManager.deleteTaskById(taskToDelete.tId);
                 expect(tskManager.taskManagerList).not.toContain(taskToDelete);
+            })
+        })
+    })
+
+
+    describe('#getTaskById', () => {
+        describe('when getTaskById method is passed an ID', () => {
+            it('should return the corresponding task from taskManager', () => {
+                const tskManager = new taskManager();
+                let taskToRetrieve, task;
+                for (let i = 0; i < 10; i++) {
+                    if (i == 4) {
+                        taskToRetrieve = new taskObject(i, 'Dummy', 'Dummy', 'Dummy', '1/1/2020', '', '');
+                        tskManager.addTask(taskToRetrieve);
+
+                    } else {
+                        task = new taskObject(i, 'Normal', 'Normal', 'Normal', '', '', '');
+                        tskManager.addTask(task);
+                    }
+                }
+                expect(tskManager.getTaskById(taskToRetrieve.tId)).toEqual(taskToRetrieve);
             })
         })
     })
