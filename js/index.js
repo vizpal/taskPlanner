@@ -6,6 +6,12 @@ const formValidateTaskAssignedTo = document.querySelector('#form-validate-task-a
 const formValidateTaskDueDate = document.querySelector('#form-validate-task-DueDate');
 const formValidateTaskStatus = document.querySelector('#form-validate-task-status');
 const formValidateTaskPriority = document.querySelector('#form-validate-task-priority');
+let editName = document.querySelector('#modal-edit-task-name');
+let editDescription = document.querySelector('#modal-edit-task-description');
+let editAssignedTo = document.querySelector('#modal-edit-task-assignedTo');
+let editDueDate = document.querySelector('#modal-edit-task-dueDate');
+let editStatus = document.querySelector('#modal-edit-task-status');
+let editPriority = document.querySelector('#modal-edit-task-priority');
 let tableData = "";
 let validationFail = 0;
 let taskId = 0;
@@ -59,7 +65,7 @@ let renderPage = (taskPlanner) => {
             if (item.cells[4].outerText == "Done") item.style.backgroundColor = "#CAF6CA";
         });
 
-         // Set table row color to red for status high priority tasks.
+        // Set table row color to red for status high priority tasks.
         document.querySelectorAll('tr').forEach((item) => {
             // cells[5] represents the 5th column of the rendered table corresponds to "priority"
             if (item.cells[5].outerText == "High") item.style.backgroundColor = "#F64A66";
@@ -134,6 +140,7 @@ formValidate.addEventListener("submit", (event) => {
         formValidateTaskStatus.value,
         formValidateTaskPriority.value);
     taskId++;
+    console.log(`taskId: ${taskId}`)
     taskPlanner.addTask(newTask);
 
 
@@ -172,13 +179,28 @@ taskList.addEventListener("click", (event) => {
     }
 
     if (event.target.classList.contains('edit-button')) {
+        editName.value = "";
+        editDescription.value = "";
+        editAssignedTo.value = "";
+        editDueDate.value = "";
+        editStatus.value = "";
+        editPriority.value = "";
         const parentTask = event.target.parentElement.parentElement;
-        const gotTaskId = parentTask.dataset.taskId;
-        taskPlanner.editTaskById(gotTaskId);
-        taskPlanner.save(gotTaskId);
-        renderPage(taskPlanner);
+        let gotTaskId = parentTask.dataset.taskId;
+        let edtTsk = taskPlanner.editTaskById(gotTaskId);
+        console.log(`gotTaskId: ${gotTaskId}`)
+        editName.value = edtTsk.tName;
+        editDescription.value = edtTsk.tDescription;
+        editAssignedTo.value = edtTsk.tAssignee;
+        editDueDate.value = edtTsk.tDate;
+        editStatus.value = edtTsk.tStatus;
+        editPriority.value = edtTsk.tPriority;
+
+        // taskPlanner.editTaskById(gotTaskId);
+        // taskPlanner.save(gotTaskId);
+        // renderPage(taskPlanner);
     }
-    
+
 });
 
 const darkMode = document.getElementById("toggle-dark-mode");
