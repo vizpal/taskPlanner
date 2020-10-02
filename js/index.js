@@ -12,10 +12,13 @@ let editAssignedTo = document.querySelector('#modal-edit-task-assignedTo');
 let editDueDate = document.querySelector('#modal-edit-task-dueDate');
 let editStatus = document.querySelector('#modal-edit-task-status');
 let editPriority = document.querySelector('#modal-edit-task-priority');
+const saveBtn = document.querySelector("#save-button");
 let tableData = "";
 let validationFail = 0;
 let taskId = 0;
 let storeTaskPlanner;
+let editTaskId = 0;
+let editTsk;
 let taskPlanner = new taskManager;
 
 
@@ -68,7 +71,7 @@ let renderPage = (taskPlanner) => {
         // Set table row color to red for status high priority tasks.
         document.querySelectorAll('tr').forEach((item) => {
             // cells[5] represents the 5th column of the rendered table corresponds to "priority"
-            if (item.cells[5].outerText == "High") item.style.backgroundColor = "#F64A66";
+            if (item.cells[5].outerText == "High") item.style.backgroundColor = "#FCD5CE";
         });
     }
     // EventListner for Submit Button for adding task. This task is 
@@ -195,12 +198,26 @@ taskList.addEventListener("click", (event) => {
         editDueDate.value = edtTsk.tDate;
         editStatus.value = edtTsk.tStatus;
         editPriority.value = edtTsk.tPriority;
-
-        // taskPlanner.editTaskById(gotTaskId);
-        // taskPlanner.save(gotTaskId);
-        // renderPage(taskPlanner);
+        editTaskId = gotTaskId;
     }
+});
 
+// TODO: Add CSS transition effect 
+saveBtn.addEventListener('click', (event) => {
+    let editTsk = new taskObject(Number(editTaskId),
+        editName.value,
+        editDescription.value,
+        editAssignedTo.value,
+        editDueDate.value,
+        editStatus.value,
+        editPriority.value);
+    taskPlanner.edit(editTaskId, editTsk)
+    for (let i = 0; i < taskPlanner.taskManagerList.length; i++) {
+        if (taskPlanner.taskManagerList[i].tId == editTaskId) {
+            taskPlanner.taskManagerList[i] = editTsk;
+        }
+    }
+    renderPage(taskPlanner);
 });
 
 const darkMode = document.getElementById("toggle-dark-mode");

@@ -33,29 +33,22 @@ class taskManager {
 
     // Return the task when requested using an ID field 
     deleteTaskById(id) {
-        for (let i = 0; i < this.taskManagerList.length; i++) {
-             if (this.taskManagerList[i].tId == id) {
+            for (let i = 0; i < this.taskManagerList.length; i++) {
+                if (this.taskManagerList[i].tId == id) {
                     return this.taskManagerList.splice(i, 1);
                 } else console.log(`id:${id} not found in TaskList.`);
             }
         }
-    // Return the task when requested using an ID field
+        // Return the task when requested using an ID field
     editTaskById(id) {
         for (let i = 0; i < this.taskManagerList.length; i++) {
-             if (this.taskManagerList[i].tId == id) {
-                    return this.taskManagerList[i];
-                } else console.log(`id:${id} not found in TaskList.`);
-            }
+            if (this.taskManagerList[i].tId == id) {
+                return this.taskManagerList[i];
+            } else console.log(`id:${id} not found in TaskList.`);
         }
-        // Function getTasksWithStatus returns list with specified status
-        // getTasksWithStatus(status) {
-        //         for (let i = 0; i < taskManagerList.length; i++) {
-        //             return this.taskManagerList.filter((i, status) => {
-        //                 return i.tStatus == status;
-        //             })
-        //         }
-        //     }
-        // Function addTask adds task to back of aray object
+    }
+
+    // Function addTask adds task to back of aray object
     addTask(task) {
         return this.taskManagerList.push(task);
     }
@@ -100,6 +93,22 @@ class taskManager {
         if (window.localStorage.getItem('currentId')) {
             // Convert the currentId to a number and store it in our TaskManager
             this.tId = Number(window.localStorage.getItem('currentId'));
+        }
+    }
+
+    edit(currentId, modTask) {
+        console.log("------- editting task      --------- ")
+        let editTask = JSON.parse(localStorage.getItem('tasks'));
+        for (let idx = 0; idx < editTask.length; idx++) {
+            if (editTask[idx].tId == currentId) {
+                console.log(`Edit Task inserting modified: ${modTask}`);
+                editTask[idx] = modTask;
+            }
+
+            window.localStorage.setItem('tasks', JSON.stringify(editTask));
+
+            // Store the currentId in localStorage
+            window.localStorage.setItem('currentId', String(currentId));
         }
     }
 }
