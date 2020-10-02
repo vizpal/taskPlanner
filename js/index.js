@@ -90,7 +90,12 @@ formValidate.addEventListener("submit", (event) => {
     console.log("Task Due Date :", formValidateTaskDueDate.value);
     console.log("Task Status:", formValidateTaskStatus.value);
     console.log("Task Priority:", formValidateTaskPriority.value);
-
+    let todaysDate = new Date(Date.now()).toLocaleString().split(',')[0].split('/');
+    let day = todaysDate[0];
+    let month = todaysDate[1];
+    let year = todaysDate[2];
+    // taskDueDate is in yyyy-mm-dd format
+    let taskDueDate = formValidateTaskDueDate.value.split('-');
     // Form validation for Task Name Field for min length 8
     if (formValidateTaskName.value.length > 8) {
         formValidateTaskName.classList.add('is-valid');
@@ -120,7 +125,17 @@ formValidate.addEventListener("submit", (event) => {
         formValidateTaskAssignedTo.classList.remove('is-valid');
         validationFail++;
     }
-
+    console.log(`taskDueDate[2]:${taskDueDate[2]} day:${day} taskDueDate[1]:${taskDueDate[1]} month:${month}`)
+    if ((taskDueDate[2] >= day) && (taskDueDate[1] >= month)) {
+        console.log("-----is-valid")
+        formValidateTaskDueDate.classList.add('is-valid');
+        formValidateTaskDueDate.classList.remove('is-invalid');
+    } else {
+        console.log("-----is-invalid")
+        formValidateTaskDueDate.classList.add('is-invalid');
+        formValidateTaskDueDate.classList.remove('is-valid');
+        validationFail++;
+    }
     // If validation fails then function will not proceed further and 
     // will return. The value of validationFail will also needed to be 
     // reset to 0 for sanity.
@@ -157,7 +172,7 @@ formValidate.addEventListener("submit", (event) => {
 
     // Clear all form fields once user data has been processed 
     // ----------------------------------------------------------------------------------
-    clearFields();
+    // clearFields();
 });
 
 const taskList = document.querySelector('#table-data');
