@@ -1,11 +1,22 @@
+html {
+    --bck-color: radial-gradient(circle, #ebebe9, #efefe9, #f4f3e9, #f9f6e9, #fefae9);
+    --ft-color: #000000;
+}
+
+html.darkmode {
+    --bck-color: black;
+    --ft-color: white;
+}
+
 body {
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto', sans-serif;
-    background-image: radial-gradient(circle, #ebebe9, #efefe9, #f4f3e9, #f9f6e9, #fefae9);
+    background: var(--bck-color);
+    color: var(--ft-color);
 }
 
-.darkmode {
+/*.darkmode {
     /* background: #121212;
     background: #272727; */
     /* background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
@@ -16,9 +27,14 @@ body {
     /* background-image: linear-gradient( 135deg, #FFF6B7 10%, #F6416C 100%); */
     /* background-color: #7f5a83;
     background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%); */
-    background-color: #485461;
+    /*background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
-}
+}*/
+
+
+
+
+
 
 .task-container {
     width: 80%;

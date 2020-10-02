@@ -181,21 +181,54 @@ taskList.addEventListener("click", (event) => {
     
 });
 
-const darkMode = document.getElementById("toggle-dark-mode");
+//const darkMode = document.getElementById("toggle-dark-mode");
 // Add darkmode togglr button to navbar with fa icon switcher.  
 // Event listner also adds class based on darmode value
 // ----------------------------------------------------------------------------------
 // TODO: Add CSS transition effect 
-darkMode.addEventListener('click', (event) => {
-    if (event.target.classList.contains("fa-sun")) {
-        event.target.classList.remove("fa-sun");
-        event.target.classList.add("fa-moon");
-    } else if (event.target.classList.contains("fa-moon")) {
-        event.target.classList.remove("fa-moon");
-        event.target.classList.add("fa-sun");
-    }
-});
+/* darkMode.addEventListener('click', (event) => { */
+/*     if (event.target.classList.contains("fa-sun")) { */
+/*         event.target.classList.remove("fa-sun"); */
+/*         event.target.classList.add("fa-moon"); */
+/*     } else if (event.target.classList.contains("fa-moon")) { */
+/*         event.target.classList.remove("fa-moon"); */
+/*         event.target.classList.add("fa-sun"); */
+/*     } */
+/* }); */
 
+const DARK_MODE = 'dark';
+const LIGHT_MODE = 'light';
+const THEME = 'mode';
+
+document.addEventListener(
+  'DOMContentLoaded', (event) => {
+    applyTheme();
+    const toggleDarkMode = document.getElementById('toggle-dark-mode');
+    toggleDarkMode.onclick = function() {
+      let currentMode = localStorage.getItem(THEME);
+      localStorage.setItem(
+        THEME, 
+        currentMode === DARK_MODE ? LIGHT_MODE : DARK_MODE
+      );
+      applyTheme();
+    }
+  }
+);
+
+function applyTheme() {
+  let html = document.documentElement;
+  let currentMode = localStorage.getItem(THEME);
+  if (currentMode === DARK_MODE) {
+    html.classList.add(DARK_MODE);
+    document.getElementById('toggle-dark-mode').innerHTML = 
+      '<i class="btn btn-light fas fa-sun"></i>';
+  } 
+  else {
+    html.classList.remove(DARK_MODE);
+    document.getElementById('toggle-dark-mode').innerHTML = 
+      '<i class="btn btn-light fas fa-moon"></i>';
+  }
+}
 
 if (typeof localStorage !== 'undefined') {
     taskPlanner.load();
