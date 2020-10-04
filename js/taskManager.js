@@ -84,6 +84,7 @@ class taskManager {
         // Check if any tasks are saved in localStorage
         if (window.localStorage.getItem('tasks')) {
             // Convert it to an array and store it in our TaskManager
+            let Id;
             console.log("------- Load Task --------- ")
             this.taskManagerList = JSON.parse(localStorage.getItem('tasks'));
             console.log(this.taskManagerList);
@@ -92,11 +93,12 @@ class taskManager {
             // Check if the currentId is saved in localStorage
             if (window.localStorage.getItem('currentId')) {
                 // Convert the currentId to a number and store it in our TaskManager
-                this.tId = Number(window.localStorage.getItem('currentId'));
+                Id = Number(window.localStorage.getItem('currentId'));
+                console.log(`Retriveing ID from Local Storage: ${Id}`);
             }
-            return (this.taskManagerList.length == 0) ? false : true;
+            return (this.taskManagerList.length == 0) ? [false] : [true, Id];
         } else {
-            return false;
+            return [false];
         }
 
     }

@@ -163,6 +163,7 @@ formValidate.addEventListener("submit", (event) => {
     console.log(`taskId: ${taskId}`)
     taskPlanner.addTask(newTask);
 
+    // Everytime a new task is validated and added ensure that taskList is displayed
     taskListEnable.style.display = 'block';
 
     // Save to Local Storage 
@@ -187,7 +188,6 @@ taskList.addEventListener("click", (event) => {
         const parentTask = event.target.parentElement.parentElement;
         const gotTaskId = parentTask.dataset.taskId;
         taskPlanner.getTaskById(gotTaskId).tStatus = 'Done';
-        taskPlanner.save(gotTaskId);
         renderPage(taskPlanner);
     }
 
@@ -195,7 +195,6 @@ taskList.addEventListener("click", (event) => {
         const parentTask = event.target.parentElement.parentElement;
         const gotTaskId = parentTask.dataset.taskId;
         taskPlanner.deleteTaskById(gotTaskId);
-        taskPlanner.save(gotTaskId);
         // Disable displaying the TaskList if the last task was deleted
         if (taskPlanner.taskManagerList.length == 0) {
             taskListEnable.style.display = 'none';
@@ -278,9 +277,11 @@ function applyTheme() {
 // Check for local storage and call renderPage() is returned data 
 // ----------------------------------------------------------------------------------
 if (typeof localStorage !== 'undefined') {
-    if (taskPlanner.load()) {
+    if (taskPlanner.load()[0]) {
         taskListEnable.style.display = 'block';
         renderPage(taskPlanner);
+        taskId = taskPlanner.load()[1] + 1;
+        console.log(`Loaded ID: ${taskId}`)
     }
 } else {
     console.log("------- LocalStorage is Undefined -------");
