@@ -33,16 +33,16 @@ class taskManager {
 
     // Return the task when requested using an ID field 
     deleteTaskById(id) {
-        for (let i = 0; i < this.taskManagerList.length; i++) {
-             if (this.taskManagerList[i].tId == id) {
+            for (let i = 0; i < this.taskManagerList.length; i++) {
+                if (this.taskManagerList[i].tId == id) {
                     return this.taskManagerList.splice(i, 1);
                 } else console.log(`id:${id} not found in TaskList.`);
             }
         }
-    // Return the task when requested using an ID field
+        // Return the task when requested using an ID field
     editTaskById(id) {
-        for (let i = 0; i < this.taskManagerList.length; i++) {
-             if (this.taskManagerList[i].tId == id) {
+            for (let i = 0; i < this.taskManagerList.length; i++) {
+                if (this.taskManagerList[i].tId == id) {
                     return this.taskManagerList[i];
                 } else console.log(`id:${id} not found in TaskList.`);
             }
@@ -94,12 +94,17 @@ class taskManager {
             console.log("------- Load Task --------- ")
             this.taskManagerList = JSON.parse(localStorage.getItem('tasks'));
             console.log(this.taskManagerList);
+
+
+            // Check if the currentId is saved in localStorage
+            if (window.localStorage.getItem('currentId')) {
+                // Convert the currentId to a number and store it in our TaskManager
+                this.tId = Number(window.localStorage.getItem('currentId'));
+            }
+            return (this.taskManagerList.length == 0) ? false : true;
+        } else {
+            return false;
         }
 
-        // Check if the currentId is saved in localStorage
-        if (window.localStorage.getItem('currentId')) {
-            // Convert the currentId to a number and store it in our TaskManager
-            this.tId = Number(window.localStorage.getItem('currentId'));
-        }
     }
 }

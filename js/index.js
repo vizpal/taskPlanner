@@ -6,6 +6,7 @@ const formValidateTaskAssignedTo = document.querySelector('#form-validate-task-a
 const formValidateTaskDueDate = document.querySelector('#form-validate-task-DueDate');
 const formValidateTaskStatus = document.querySelector('#form-validate-task-status');
 const formValidateTaskPriority = document.querySelector('#form-validate-task-priority');
+const taskListEnable = document.querySelector(".task-list");
 let tableData = "";
 let validationFail = 0;
 let taskId = 0;
@@ -59,7 +60,7 @@ let renderPage = (taskPlanner) => {
             if (item.cells[4].outerText == "Done") item.style.backgroundColor = "#CAF6CA";
         });
 
-         // Set table row color to red for status high priority tasks.
+        // Set table row color to red for status high priority tasks.
         document.querySelectorAll('tr').forEach((item) => {
             // cells[5] represents the 5th column of the rendered table corresponds to "priority"
             if (item.cells[5].outerText == "High") item.style.backgroundColor = "#fcd5ce";
@@ -136,6 +137,7 @@ formValidate.addEventListener("submit", (event) => {
     taskId++;
     taskPlanner.addTask(newTask);
 
+    taskListEnable.style.display = 'block';
 
     // Save to Local Storage 
     // ----------------------------------------------------------------------------------
@@ -168,6 +170,10 @@ taskList.addEventListener("click", (event) => {
         const gotTaskId = parentTask.dataset.taskId;
         taskPlanner.deleteTaskById(gotTaskId);
         taskPlanner.save(gotTaskId);
+        // Disable displaying the TaskList if the last task was deleted
+        if (taskPlanner.taskManagerList.length == 0) {
+            taskListEnable.style.display = 'none';
+        }
         renderPage(taskPlanner);
     }
 
@@ -178,61 +184,47 @@ taskList.addEventListener("click", (event) => {
         taskPlanner.save(gotTaskId);
         renderPage(taskPlanner);
     }
-    
+
 });
 
 //const darkMode = document.getElementById("toggle-dark-mode");
 // Add darkmode togglr button to navbar with fa icon switcher.  
 // Event listner also adds class based on darmode value
 // ----------------------------------------------------------------------------------
-// TODO: Add CSS transition effect 
-/* darkMode.addEventListener('click', (event) => { */
-/*     if (event.target.classList.contains("fa-sun")) { */
-/*         event.target.classList.remove("fa-sun"); */
-/*         event.target.classList.add("fa-moon"); */
-/*     } else if (event.target.classList.contains("fa-moon")) { */
-/*         event.target.classList.remove("fa-moon"); */
-/*         event.target.classList.add("fa-sun"); */
-/*     } */
-/* }); */
-
-const DARK_MODE = 'dark';
-const LIGHT_MODE = 'light';
-const THEME = 'mode';
-
 document.addEventListener(
-  'DOMContentLoaded', (event) => {
-    applyTheme();
-    const toggleDarkMode = document.getElementById('toggle-dark-mode');
-    toggleDarkMode.onclick = function() {
-      let currentMode = localStorage.getItem(THEME);
-      localStorage.setItem(
-        THEME, 
-        currentMode === DARK_MODE ? LIGHT_MODE : DARK_MODE
-      );
-      applyTheme();
+    'DOMContentLoaded', (event) => {
+        applyTheme();
+        const toggleDarkMode = document.getElementById('toggle-dark-mode');
+        toggleDarkMode.onclick = function() {
+            let currentMode = localStorage.getItem('mode');
+            localStorage.setItem(
+                'mode',
+                currentMode === 'dark' ? 'light' : 'dark'
+            );
+            applyTheme();
+        }
     }
-  }
 );
 
 function applyTheme() {
-  let html = document.documentElement;
-  let currentMode = localStorage.getItem(THEME);
-  if (currentMode === DARK_MODE) {
-    html.classList.add(DARK_MODE);
-    document.getElementById('toggle-dark-mode').innerHTML = 
-      '<i class="btn btn-light fas fa-sun"></i>';
-  } 
-  else {
-    html.classList.remove(DARK_MODE);
-    document.getElementById('toggle-dark-mode').innerHTML = 
-      '<i class="btn btn-light fas fa-moon"></i>';
-  }
+    let html = document.documentElement;
+    let currentMode = localStorage.getItem('mode');
+    if (currentMode === 'dark') {
+        html.classList.add('dark');
+        document.getElementById('toggle-dark-mode').innerHTML =
+            '<i class="btn btn-light fas fa-sun"></i>';
+    } else {
+        html.classList.remove('dark');
+        document.getElementById('toggle-dark-mode').innerHTML =
+            '<i class="btn btn-light fas fa-moon"></i>';
+    }
 }
 
 if (typeof localStorage !== 'undefined') {
-    taskPlanner.load();
-    renderPage(taskPlanner);
+    if (taskPlanner.load()) {
+        taskListEnable.style.display = 'block';
+        renderPage(taskPlanner);
+    }
 } else {
     console.log("------- LocalStorage is Undefined -------");
 }
