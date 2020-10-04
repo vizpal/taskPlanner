@@ -101,12 +101,12 @@
                 <table id="table-data" class="table table-hover">
                     <thead id="table-head-data" class="table-active">
                         <tr>
-                            <th>Task Name</th>
-                            <th>Description</th>
-                            <th>Assignee</th>
-                            <th>Due-Date</th>
-                            <th>Status</th>
-                            <th>Priority</th>
+                            <th>Task Name <span onclick="sortTable(0)">  <i class="fas fa-arrows-alt-v"></i></span></th>
+                            <th>Description <span onclick="sortTable(1)">  <i class="fas fa-arrows-alt-v"></i></span></th>
+                            <th>Assignee <span onclick="sortTable(2)">  <i class="fas fa-arrows-alt-v"></i></span></th>
+                            <th>Due-Date <span onclick="sortTable(3)">  <i class="fas fa-arrows-alt-v"></i></span></th>
+                            <th>Status <span onclick="sortTable(4)">  <i class="fas fa-arrows-alt-v"></i></span></th>
+                            <th>Priority <span onclick="sortTable(5)">  <i class="fas fa-arrows-alt-v"></i></span></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -185,6 +185,7 @@
 
 
         <!--Scripts and Addons-->
+        <script src="./js/tableSort.js"></script>
         <script src="./js/taskManager.js"></script>
         <script src="./js/index.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

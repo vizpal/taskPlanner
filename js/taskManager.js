@@ -35,7 +35,10 @@ class taskManager {
     deleteTaskById(id) {
             for (let i = 0; i < this.taskManagerList.length; i++) {
                 if (this.taskManagerList[i].tId == id) {
-                    return this.taskManagerList.splice(i, 1);
+                    this.taskManagerList.splice(i, 1);
+                    console.log(this.taskManagerList)
+                    window.localStorage.setItem('tasks', JSON.stringify(this.taskManagerList));
+                    return this.taskManagerList;
                 } else console.log(`id:${id} not found in TaskList.`);
             }
         }
