@@ -33,16 +33,20 @@
                 </div>
             </div>
         </nav>
+    </div>    
 
-        <!-- Form Fields with Bootstrap Validation-->
+    <!-- Form Fields with Bootstrap Validation-->
+    <div class="container justify-content-center" style="width: 560px;">
         <h2 class="board-heading">Add Task</h2>
-        <div class="container-fluid">
+        
             <form id="form-validate" class="needs-validation" novalidation>
                 <div class="form-group"> <label for="form-validate-task-name">Task Name</label> <a href="">hold</a></span> <input type="text" id="form-validate-task-name" class="form-control" placeholder="Task Name (minimum 8 characters long)" required>
                     <div class="valid-feedback">Looks good!</div>
                     <div class="invalid-feedback">Task Name needs to be 8 characters long or more</div>
                 </div>
-                <div class="form-group"> <label for="form-validate-task-description">Task Description</label> <input type="text" id="form-validate-task-description" class="form-control" placeholder="Task Description (minimum 15 characters long)">
+                <div class="form-group"> 
+                    <label for="form-validate-task-description">Task Description</label>
+                    <textarea type="text" id="form-validate-task-description" class="form-control" placeholder="Task Description (minimum 15 characters long)"></textarea>
                     <div class="valid-feedback">Looks good!</div>
                     <div class="invalid-feedback">Task Description needs to be 15 characters long or more</div>
                 </div>
@@ -59,7 +63,7 @@
                     <div class="form-group col-md-4">
                         <label for="form-validate-task-status">Status</label>
                         <select class="form-control" id="form-validate-task-status">
-                        <option default disabled selected value>---Select Work Status---</option>
+                        <option default disabled selected value>--- Select---</option>
                         <option>Review</option>
                         <option>Done</option>
                         <option>In Progress</option>
@@ -70,7 +74,7 @@
                     <div class="form-group col-md-4">
                         <label for="form-validate-task-priority">Priority</label>
                         <select class="form-control" id="form-validate-task-priority">
-                            <option default disabled selected value>---Select Priority Status---</option> 
+                            <option default disabled selected value>---Select---</option> 
                             <option>High</option>
                             <option>Medium</option>
                             <option>Low</option>
@@ -78,21 +82,16 @@
                     </div>
                 </div>
 
-
-                <!-- <div class="form-group"> 
-                <label for="form-validate-task-dueDate">Due Date</label> 
-                <input type="date" id="form-validate-task-DueDate" class="form-control datepicker" name="date"> 
-            </div> 
- -->
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Name needs to be 3 characters long or more</div>
-                <div class="form-row my-3">
-                    <button class="btn btn-primary btn-block" type="submit"> Add Task </button>
+                <div class="form-row my-3; justify-content-center">
+                    <button class="btn btn-info" type="submit"> Add Task </button>
                 </div>
 
             </form>
-        </div>
-
+    </div> 
+        
+ 
         <hr>
 
         <!-- Update Task List-->
@@ -121,7 +120,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-edit" id="edit-task">Edit</h5>
+                        <h4 class="modal-edit" id="edit-task">Edit</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
                             <span aria-hidden="true">&times;</span> 
                         </button>
@@ -136,7 +135,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="form-validate-task-description">Task Description</label>
-                                <input type="text" id="modal-validate-task-description" class="form-control" placeholder="Task Description (minimum 15 characters long)">
+                                <textarea type="text" id="modal-validate-task-description" class="form-control" placeholder="Task Description (minimum 15 characters long)"></textarea>
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">Task Description needs to be 15 characters long or more</div>
                             </div>
@@ -146,14 +145,17 @@
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">Task Assignee needs to be 8 characters long or more</div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-row">
+                            <div class="form-group col-md-5">
                                 <label for="form-validate-task-DueDate">Due date</label>
                                 <input type="date" required class="form-control" id="modal-validate-task-DueDate">
+                                
                             </div>
-                            <div class="form-group">
+                        
+                            <div class="form-group col-md-4">
                                 <label for="form-validate-task-status">Status</label>
                                 <select class="form-control" id="modal-validate-task-status"> 
-                                        <option default disabled selected value>---Select Work Status---</option> 
+                                        <option default disabled selected value>- Select -</option> 
                                         <option>Review</option> 
                                         <option>Done</option> 
                                         <option>In Progress</option> 
@@ -161,20 +163,22 @@
                                         <option>To do</option> 
                                     </select>
                             </div>
-                            <div class="form-group">
+                            
+                            <div class="form-group col-md-3">
                                 <label for="form-validate-task-priority">Priority</label>
                                 <select class="form-control" id="modal-validate-task-priority"> 
-                                        <option default disabled selected value>---Select Priority Status---</option>  
+                                        <option default disabled selected value>- Select -</option>  
                                         <option>High</option> 
                                         <option>Medium</option> 
                                         <option>Low</option> 
                                     </select>
                             </div>
+                        </div>
                         </form>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Save</button>
                     </div>
                 </div>
             </div>
@@ -189,6 +193,8 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+       
 </body>
 <!--Social Media Links-->
 <footer class="footer">
