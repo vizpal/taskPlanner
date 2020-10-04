@@ -215,6 +215,7 @@ tr {
 
 .modal-content {
     background: var(--modal-background);
+    border-radius: 15px;
 }
 
 .close-x {
