@@ -87,13 +87,18 @@ class taskManager {
             console.log("------- Load Task --------- ")
             this.taskManagerList = JSON.parse(localStorage.getItem('tasks'));
             console.log(this.taskManagerList);
+
+
+            // Check if the currentId is saved in localStorage
+            if (window.localStorage.getItem('currentId')) {
+                // Convert the currentId to a number and store it in our TaskManager
+                this.tId = Number(window.localStorage.getItem('currentId'));
+            }
+            return (this.taskManagerList.length == 0) ? false : true;
+        } else {
+            return false;
         }
 
-        // Check if the currentId is saved in localStorage
-        if (window.localStorage.getItem('currentId')) {
-            // Convert the currentId to a number and store it in our TaskManager
-            this.tId = Number(window.localStorage.getItem('currentId'));
-        }
     }
 
     edit(currentId, modTask) {

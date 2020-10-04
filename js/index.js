@@ -13,6 +13,7 @@ let editDueDate = document.querySelector('#modal-edit-task-dueDate');
 let editStatus = document.querySelector('#modal-edit-task-status');
 let editPriority = document.querySelector('#modal-edit-task-priority');
 const saveBtn = document.querySelector("#save-button");
+const taskListEnable = document.querySelector(".task-list");
 let tableData = "";
 let validationFail = 0;
 let taskId = 0;
@@ -35,6 +36,7 @@ let clearFields = () => {
     formValidateTaskName.classList.remove('is-valid');
     formValidateTaskDescription.classList.remove('is-valid');
     formValidateTaskAssignedTo.classList.remove('is-valid');
+    formValidateTaskDueDate.classList.remove('is-valid');
 }
 
 // Update table row with row data generated through the taskObject
@@ -161,6 +163,7 @@ formValidate.addEventListener("submit", (event) => {
     console.log(`taskId: ${taskId}`)
     taskPlanner.addTask(newTask);
 
+    taskListEnable.style.display = 'block';
 
     // Save to Local Storage 
     // ----------------------------------------------------------------------------------
@@ -172,7 +175,7 @@ formValidate.addEventListener("submit", (event) => {
 
     // Clear all form fields once user data has been processed 
     // ----------------------------------------------------------------------------------
-    // clearFields();
+    clearFields();
 });
 
 const taskList = document.querySelector('#table-data');
@@ -193,6 +196,10 @@ taskList.addEventListener("click", (event) => {
         const gotTaskId = parentTask.dataset.taskId;
         taskPlanner.deleteTaskById(gotTaskId);
         taskPlanner.save(gotTaskId);
+        // Disable displaying the TaskList if the last task was deleted
+        if (taskPlanner.taskManagerList.length == 0) {
+            taskListEnable.style.display = 'none';
+        }
         renderPage(taskPlanner);
     }
 
@@ -235,25 +242,46 @@ saveBtn.addEventListener('click', (event) => {
     renderPage(taskPlanner);
 });
 
-const darkMode = document.getElementById("toggle-dark-mode");
+//const darkMode = document.getElementById("toggle-dark-mode");
 // Add darkmode togglr button to navbar with fa icon switcher.  
 // Event listner also adds class based on darmode value
 // ----------------------------------------------------------------------------------
-// TODO: Add CSS transition effect 
-darkMode.addEventListener('click', (event) => {
-    if (event.target.classList.contains("fa-sun")) {
-        event.target.classList.remove("fa-sun");
-        event.target.classList.add("fa-moon");
-    } else if (event.target.classList.contains("fa-moon")) {
-        event.target.classList.remove("fa-moon");
-        event.target.classList.add("fa-sun");
+document.addEventListener(
+    'DOMContentLoaded', (event) => {
+        applyTheme();
+        const toggleDarkMode = document.getElementById('toggle-dark-mode');
+        toggleDarkMode.onclick = function() {
+            let currentMode = localStorage.getItem('mode');
+            localStorage.setItem(
+                'mode',
+                currentMode === 'dark' ? 'light' : 'dark'
+            );
+            applyTheme();
+        }
     }
-});
+);
 
+function applyTheme() {
+    let html = document.documentElement;
+    let currentMode = localStorage.getItem('mode');
+    if (currentMode === 'dark') {
+        html.classList.add('dark');
+        document.getElementById('toggle-dark-mode').innerHTML =
+            '<i class="btn btn-light fas fa-sun"></i>';
+    } else {
+        html.classList.remove('dark');
+        document.getElementById('toggle-dark-mode').innerHTML =
+            '<i class="btn btn-light fas fa-moon"></i>';
+    }
+}
 
+// Check for local storage and call renderPage() is returned data 
+// ----------------------------------------------------------------------------------
 if (typeof localStorage !== 'undefined') {
-    taskPlanner.load();
-    renderPage(taskPlanner);
+    if (taskPlanner.load()) {
+        taskListEnable.style.display = 'block';
+        renderPage(taskPlanner);
+    }
 } else {
     console.log("------- LocalStorage is Undefined -------");
 }
