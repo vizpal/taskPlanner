@@ -4,6 +4,8 @@ html {
     --ft-color: #2D3142;
     --form-control: #dee3e2;
     --table-color: #2D3142;
+    --modal-background: #F7F7F7;
+    --close-xbox: #2D3142;
 }
 
 html.dark {
@@ -14,6 +16,8 @@ html.dark {
     --ft-color: white;
     --form-control: #F3ECFF;
     --table-color: white;
+    --modal-background: #2D3142;
+    --close-xbox: white;
 }
 
 body {
@@ -207,6 +211,14 @@ tr {
 
 .btn-space {
     margin: 50px;
+}
+
+.modal-content {
+    background: var(--modal-background);
+}
+
+.close-x {
+    color: var(--close-xbox)
 }
 
 
