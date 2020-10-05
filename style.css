@@ -44,7 +44,16 @@ body {
     /* box-shadow: 5px 5px 10px; */
 }
 
+#edit-task {
+    font-size: 2.5vw;
+}
+#form-validate-task-description {
+    height: 110px;
+}
 
+#modal-validate-task-description {
+    height: 110px;
+}
 /*.darkmode {
     /* background: #121212;
     background: #272727; */
@@ -156,7 +165,8 @@ body {
 }
 
 .board-heading {
-    padding-left: 12px;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .list-row {
