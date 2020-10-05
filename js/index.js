@@ -266,11 +266,11 @@ function applyTheme() {
     if (currentMode === 'dark') {
         html.classList.add('dark');
         document.getElementById('toggle-dark-mode').innerHTML =
-            '<i class="btn btn-light fas fa-sun"></i>';
+            '<i class="btn btn-light fas fa-sun" title="Light Mode"></i>';
     } else {
         html.classList.remove('dark');
         document.getElementById('toggle-dark-mode').innerHTML =
-            '<i class="btn btn-light fas fa-moon"></i>';
+            '<i class="btn btn-light fas fa-moon" title="Dark Mode"></i>';
     }
 }
 

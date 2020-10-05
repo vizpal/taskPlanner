@@ -6,6 +6,7 @@ html {
     --table-color: #2D3142;
     --modal-background: #F7F7F7;
     --close-xbox: #2D3142;
+    --table-hover: black;
 }
 
 html.dark {
@@ -18,6 +19,7 @@ html.dark {
     --table-color: white;
     --modal-background: #2D3142;
     --close-xbox: white;
+    --table-hover: white;
 }
 
 body {
@@ -172,6 +174,10 @@ body {
     box-shadow: 5px 10px 18px #888888;
     border-bottom-color: #adff2f;
     color: var(--table-color);
+}
+
+.table-hover {
+    color: var(--table-hover);
 }
 
 tr {
