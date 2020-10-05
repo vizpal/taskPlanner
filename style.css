@@ -1,12 +1,14 @@
 html {
-    /* --bck-color: radial-gradient(circle, #ebebe9, #efefe9, #f4f3e9, #f9f6e9, #fefae9); */
     --bck-color: #F7F7F7;
     --ft-color: #2D3142;
     --form-control: #dee3e2;
-    --table-color: #2D3142;
+    /* --table-color: #2D3142; */
+    --table-color: black;
     --modal-background: #F7F7F7;
     --close-xbox: #2D3142;
     --table-hover: black;
+    --table-hover-color: rgb(65, 57, 57);
+    --table-hover-background-color: rgba(161, 203, 250, 0.527);
 }
 
 html.dark {
@@ -20,6 +22,8 @@ html.dark {
     --modal-background: #2D3142;
     --close-xbox: white;
     --table-hover: white;
+    --table-hover-color: rgb(248, 245, 245);
+    --table-hover-background-color: rgba(52, 71, 88, 0.966);
 }
 
 body {
@@ -193,9 +197,22 @@ body {
     color: var(--table-color);
 }
 
-.table-hover {
-    color: var(--table-hover);
+.table-hover tbody tr:hover {
+    color: var(--table-hover-color);
+    background-color: var(--table-hover-background-color);
 }
+
+
+/* .tr:hover { */
+
+
+/* color: var(--table-hover); */
+
+
+/* color: white; */
+
+
+/* } */
 
 tr {
     border-bottom: 2px solid #7AD5E8;
@@ -243,6 +260,24 @@ tr {
 
 .close-x {
     color: var(--close-xbox)
+}
+
+.fa-arrows-alt-v {
+    color: rgba(255, 68, 0, 0.753);
+}
+
+.form-label {
+    font-weight: bold;
+    /* text-shadow: 2px 2px 15px grey; */
+    /* text-shadow: 1px 2px 10px rgb(51, 23, 1); */
+}
+
+.modal-footer {
+    border-top: transparent;
+}
+
+.modal-header {
+    border-bottom: transparent;
 }
 
 
