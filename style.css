@@ -280,6 +280,10 @@ tr {
     border-bottom: transparent;
 }
 
+.add-task-btn {
+    width: 100%;
+}
+
 
 /* #table-body-data,
 tr,
