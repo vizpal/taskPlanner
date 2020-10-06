@@ -9,6 +9,8 @@ html {
     --table-hover: black;
     --table-hover-color: rgb(65, 57, 57);
     --table-hover-background-color: rgba(161, 203, 250, 0.527);
+    --btn-light-background-color: #f7f7f7;
+    --btn-light-color: black;
 }
 
 html.dark {
@@ -24,6 +26,8 @@ html.dark {
     --table-hover: white;
     --table-hover-color: rgb(248, 245, 245);
     --table-hover-background-color: rgba(52, 71, 88, 0.966);
+    --btn-light-background-color: #2d3142;
+    --btn-light-color: white;
 }
 
 body {
@@ -38,14 +42,28 @@ body {
 }
 
 .navbar {
-    background-color: red;
+    /* background-color: red;
     background-color: #D1D5C6;
     background-color: #bdd4e7;
     background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
     background-color: #b8c6db;
     background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-    opacity: .8;
+    opacity: .8; */
     /* box-shadow: 5px 5px 10px; */
+    background-color: transparent;
+    /* background-image: linear-gradient(315deg, #b8c6db18 0%, #f5f7fa 74%); */
+}
+
+.task-planner-icon {
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 64px;
+    height: 64px;
+}
+
+.task-planner-title {
+    margin-top: 10px;
+    height: 32px;
 }
 
 #edit-task {
@@ -191,10 +209,37 @@ body {
 .table {
     margin: 0;
     padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
     border-spacing: 10px 10px;
     box-shadow: 5px 10px 18px #888888;
     border-bottom-color: #adff2f;
     color: var(--table-color);
+}
+
+th.task-name {
+    width: 20%
+}
+
+th.task-description {
+    width: 30%
+}
+
+th.task-assignee {
+    width: 12%
+}
+
+th.task-dueDate {
+    width: 10%
+}
+
+th.task-status {
+    width: 10%
+}
+
+th.task-priority {
+    width: 10%
 }
 
 .table-hover tbody tr:hover {
@@ -282,6 +327,12 @@ tr {
 
 .add-task-btn {
     width: 100%;
+}
+
+.btn-light {
+    background-color: var(--btn-light-background-color);
+    color: var(--btn-light-color);
+    border-color: var(--btn-light-background-color);
 }
 
 

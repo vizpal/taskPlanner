@@ -271,11 +271,17 @@ function applyTheme() {
     if (currentMode === 'dark') {
         html.classList.add('dark');
         document.getElementById('toggle-dark-mode').innerHTML =
-            '<i class="btn btn-light fas fa-sun" title="Light Mode"></i>';
+            // '<i class="btn btn-light btn-lg fas fa-toggle-on" title="Light Mode"></i>';
+            '<i class="btn btn-light btn-lg fas fa-sun" title="Light Mode"></i>';
+        // '<i class="btn btn-light btn-lg fas fa-lightbulb" title="Light Mode"></i>';
+        // '<i class="btn btn-light btn-lg far fa-smile-beam" title="Light Mode"></i>';
     } else {
         html.classList.remove('dark');
         document.getElementById('toggle-dark-mode').innerHTML =
-            '<i class="btn btn-light fas fa-moon" title="Dark Mode"></i>';
+            // '<i class="btn btn-light btn-lg far fa-grin-tongue-wink" title="Dark Mode"></i>';
+            '<i class="btn btn-light btn-lg far fa-lightbulb" title="Dark Mode"></i>';
+        // '<i class="btn btn-light btn-lg fas fa-moon" title="Dark Mode"></i>';
+        // '<i class="btn btn-light btn-lg fas fa-toggle-off" title="Dark Mode"></i>';
     }
 }
 
