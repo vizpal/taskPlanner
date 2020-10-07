@@ -21,14 +21,19 @@
     <!-- Navbar -->
     <div>
         <nav class="navbar navbar-expand-md navbar-light">
-            <div class="container-fluid"> <a href="#" class="navbar-brand"><i class="fas fa-laptop-code"></i></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"></button>
-                <!-- Add navbar toggler icon--><span class="navbar-toggler-icon"></span>
+            <!-- <div class="container-fluid"> <a href="#" class="navbar-brand"><i class="fas fa-laptop-code"></i></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"></button> -->
+            <div class="container-fluid">
+                <!-- <a href="#" class="navbar-brand"><img class="task-planner-icon" src="./images/taskPlanner_ico3.png" alt=""><img class="task-planner-icon" src="./images/taskPlanner.png" alt=""></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"></button> -->
+                <!-- <div><img class="task-planner-icon" src="./images/taskPlanner_ico1.png" alt=""></div> -->
+                <!-- Add navbar toggler icon<span class="navbar-toggler-icon"></span> -->
+                <!-- <div class="task-planner-title"><img class="task-planner-icon" src="./images/taskPlanner.png" alt=""></div> -->
+                <!-- Add navbar toggler icon<span class="navbar-toggler-icon"></span> -->
+                <div class="task-planner-icon"><img class="task-planner-icon" src="./images/taskPlanner_ico1.png" alt=""></div>
+                <div class="task-planner-title"><img class="task-planner-title" src="./images/taskPlanner.png" alt=""></div>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item "><i id="toggle-dark-mode"></i></li>
-                        <li class="nav-item active"> <a href="#" class="nav-link">Home</a> </li>
-                        <li class="nav-item"> <a href="#" class="nav-link">Help</a> </li>
-                        <li class="nav-item pt-1"> <input type="text" placeholder="Search.." name="search"> </li>
+                        <li class="nav-item"><i class="btn btn-light btn-lg far fa-question-circle" title="Help"></i></li>
                     </ul>
                 </div>
             </div>
@@ -37,46 +42,44 @@
 
     <!-- Form Fields with Bootstrap Validation-->
     <div class="container justify-content-center">
-        <h2 class="board-heading">Add Task</h2>
+        <h2 class="board-heading"></h2>
 
         <form id="form-validate" class="needs-validation" novalidation>
-            <div class="form-group"> <label for="form-validate-task-name">Task Name</label> <a href="">hold</a></span> <input type="text" id="form-validate-task-name" class="form-control" placeholder="Task Name (minimum 8 characters long)" required>
+            <div class="form-group"> <label class="form-label" for="form-validate-task-name">Task Name</label> <a href="">hold</a></span> <input type="text" id="form-validate-task-name" class="form-control" placeholder="Task Name (minimum 8 characters long)" required>
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Name needs to be 8 characters long or more</div>
             </div>
             <div class="form-group">
-                <label for="form-validate-task-description">Task Description</label>
+                <label class="form-label" for="form-validate-task-description">Task Description</label>
                 <textarea type="text" id="form-validate-task-description" class="form-control" placeholder="Task Description (minimum 15 characters long)"></textarea>
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Description needs to be 15 characters long or more</div>
             </div>
-            <div class="form-group"> <label for="form-validate-task-assignedTo">Assignee</label> <input type="text" id="form-validate-task-assignedTo" class="form-control" placeholder="Assign User Name (minimum 8 charaters long)">
+            <div class="form-group"> <label class="form-label" for="form-validate-task-assignedTo">Assignee</label> <input type="text" id="form-validate-task-assignedTo" class="form-control" placeholder="Assign User Name (minimum 8 charaters long)">
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Assignee needs to be 8 characters long or more</div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="form-validate-task-DueDate">Due date</label>
+                    <label class="form-label" for="form-validate-task-DueDate">Due date</label>
                     <input type="date" required class="form-control" id="form-validate-task-DueDate">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="form-validate-task-status">Status</label>
+                    <label class="form-label" for="form-validate-task-status">Status</label>
                     <select class="form-control" id="form-validate-task-status">
-                        <option default disabled selected value>--- Select---</option>
                         <option>Review</option>
                         <option>Done</option>
                         <option>In Progress</option>
                         <option>Problem</option>
-                        <option>To do</option>
+                        <option selected>Opened</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="form-validate-task-priority">Priority</label>
+                    <label class="form-label" for="form-validate-task-priority">Priority</label>
                     <select class="form-control" id="form-validate-task-priority">
-                            <option default disabled selected value>---Select---</option> 
                             <option>High</option>
-                            <option>Medium</option>
+                            <option selected>Medium</option>
                             <option>Low</option>
                     </select>
                 </div>
@@ -85,7 +88,7 @@
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Task Name needs to be 3 characters long or more</div>
             <div class="form-row my-3; justify-content-center">
-                <button class="btn btn-info" type="submit"> Add Task </button>
+                <button class="btn btn-info add-task-btn" type="submit"> Add Task </button>
             </div>
 
         </form>
@@ -97,6 +100,7 @@
     <!-- Update Task List-->
     <div class="container-fluid task-list">
         <h2 class="board-heading">Task List</h3>
+<<<<<<< HEAD
             <div class="table-responsive-sm">
             <table id="table-data" class="table table-hover">
                 <thead id="table-head-data" class="table-active">
@@ -108,6 +112,18 @@
                         <th class="w-12">Status <span onclick="sortTable(4)">  <i class="fas fa-arrows-alt-v" title="Sort by Status"></i></span></th>
                         <th class="w-12">Priority <span onclick="sortTable(5)">  <i class="fas fa-arrows-alt-v" title="Sort by Priority"></i></span></th>
                         <th class="w-12"></th>
+=======
+            <table id="table-data" class="table table-hover table-responsive-sm">
+                <thead id="table-head-data" class="table-active">
+                    <tr>
+                        <th class="task-name">Task Name <span onclick="sortTable(0)"><i class="fas fa-arrows-alt-v" title="Sort by Name"></i></span></th>
+                        <th class="task-description">Description <span onclick="sortTable(1)"><i class="fas fa-arrows-alt-v" title="Sort by Description"></i></span></th>
+                        <th class="task-assignee">Assignee <span onclick="sortTable(2)"><i class="fas fa-arrows-alt-v" title="Sort by Assignee"></i></span></th>
+                        <th class="task-dueDate">Due-Date <span onclick="sortTable(3)"><i class="fas fa-arrows-alt-v" title="Sort by Due date"></i></span></th>
+                        <th class="task-status">Status <span onclick="sortTable(4)"><i class="fas fa-arrows-alt-v" title="Sort by Status"></i></span></th>
+                        <th class="task-priority">Priority <span onclick="sortTable(5)"><i class="fas fa-arrows-alt-v" title="Sort by Priority"></i></span></th>
+                        <th></th>
+>>>>>>> master
                     </tr>
                 </thead>
                 <tbody id="table-body-data"> </tbody>
@@ -117,7 +133,6 @@
 
 
     <!-- Modal Box -->
-
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -132,8 +147,6 @@
                         <div class="form-group">
                             <label for="form-validate-task-name">Task Name</label>
                             <input type="text" id="modal-edit-task-name" class="form-control" value="">
-                            <!-- <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">Task Name needs to be 8 characters long or more</div> -->
                         </div>
                         <div class="form-group">
                             <label for="form-validate-task-description">Task Description</label>
@@ -144,8 +157,6 @@
                         <div class="form-group">
                             <label for="form-validate-task-assignedTo">Assignee</label>
                             <input type="text" id="modal-edit-task-assignedTo" class="form-control" value="">
-                            <!-- <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">Task Assignee needs to be 8 characters long or more</div> -->
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-5">
@@ -156,12 +167,11 @@
                             <div class="form-group col-md-4">
                                 <label for="form-validate-task-status">Status</label>
                                 <select class="form-control" id="modal-edit-task-status"> 
-                                        <option default disabled selected value>- Select -</option> 
-                                        <option>Review</option> 
-                                        <option>Done</option> 
-                                        <option>In Progress</option> 
-                                        <option>Problem</option> 
-                                        <option>To do</option> 
+                                        <option>Review</option>
+                                        <option>Done</option>
+                                        <option>In Progress</option>
+                                        <option>Problem</option>
+                                        <option >Opened</option>
                                     </select>
                             </div>
 
@@ -180,7 +190,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="cancel-button" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-info" id="save-button" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-danger" id="save-button" data-dismiss="modal">Save</button>
                 </div>
             </div>
         </div>

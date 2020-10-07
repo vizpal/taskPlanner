@@ -27,12 +27,13 @@ let taskPlanner = new taskManager;
 // Function also clears the validation status.
 // ----------------------------------------------------------------------------------
 let clearFields = () => {
+    let today = new Date().toISOString().slice(0, 10);
     formValidateTaskName.value = "";
     formValidateTaskDescription.value = "";
     formValidateTaskAssignedTo.value = "";
-    formValidateTaskDueDate.value = "";
-    formValidateTaskStatus.value = "";
-    formValidateTaskPriority.value = "";
+    formValidateTaskDueDate.value = today;
+    formValidateTaskStatus.value = "Opened";
+    formValidateTaskPriority.value = "Medium";
     formValidateTaskName.classList.remove('is-valid');
     formValidateTaskDescription.classList.remove('is-valid');
     formValidateTaskAssignedTo.classList.remove('is-valid');
@@ -53,7 +54,7 @@ let renderPage = (taskPlanner) => {
                             <td>${task.tName}</td>
                             <td>${task.tDescription}</td>
                             <td>${task.tAssignee}</td>
-                            <td>${task.tDate}</td>
+                            <td>${task.tDate.split('-')[2]+"/"+task.tDate.split('-')[1]+"/"+task.tDate.split('-')[0]}</td>
                             <td>${task.tStatus}</td>
                             <td>${task.tPriority}</td>
                             <td><i class="btn btn-outline-danger far fa-times-circle delete-button" title="Delete Task"></i>
@@ -152,6 +153,7 @@ formValidate.addEventListener("submit", (event) => {
     // task object to the taskManager array list. The taskManager array
     // elements will hold individual tasks 
     // ----------------------------------------------------------------------------------
+
     let newTask = new taskObject(taskId,
         formValidateTaskName.value,
         formValidateTaskDescription.value,
@@ -213,9 +215,12 @@ taskList.addEventListener("click", (event) => {
         let gotTaskId = parentTask.dataset.taskId;
         let edtTsk = taskPlanner.editTaskById(gotTaskId);
         console.log(`gotTaskId: ${gotTaskId}`)
+        console.log("-----edit task------")
+        console.log(`edtTsk.tDate: ${edtTsk.tDate}`)
         editName.value = edtTsk.tName;
         editDescription.value = edtTsk.tDescription;
         editAssignedTo.value = edtTsk.tAssignee;
+        // editDueDate.value = edtTsk.tDate;
         editDueDate.value = edtTsk.tDate;
         editStatus.value = edtTsk.tStatus;
         editPriority.value = edtTsk.tPriority;
@@ -266,17 +271,24 @@ function applyTheme() {
     if (currentMode === 'dark') {
         html.classList.add('dark');
         document.getElementById('toggle-dark-mode').innerHTML =
-            '<i class="btn btn-light fas fa-sun" title="Light Mode"></i>';
+            // '<i class="btn btn-light btn-lg fas fa-toggle-on" title="Light Mode"></i>';
+            '<i class="btn btn-light btn-lg fas fa-sun" title="Light Mode"></i>';
+        // '<i class="btn btn-light btn-lg fas fa-lightbulb" title="Light Mode"></i>';
+        // '<i class="btn btn-light btn-lg far fa-smile-beam" title="Light Mode"></i>';
     } else {
         html.classList.remove('dark');
         document.getElementById('toggle-dark-mode').innerHTML =
-            '<i class="btn btn-light fas fa-moon" title="Dark Mode"></i>';
+            // '<i class="btn btn-light btn-lg far fa-grin-tongue-wink" title="Dark Mode"></i>';
+            '<i class="btn btn-light btn-lg far fa-lightbulb" title="Dark Mode"></i>';
+        // '<i class="btn btn-light btn-lg fas fa-moon" title="Dark Mode"></i>';
+        // '<i class="btn btn-light btn-lg fas fa-toggle-off" title="Dark Mode"></i>';
     }
 }
 
 // Check for local storage and call renderPage() is returned data 
 // ----------------------------------------------------------------------------------
 if (typeof localStorage !== 'undefined') {
+    document.getElementById('form-validate-task-DueDate').valueAsDate = new Date();
     if (taskPlanner.load()[0]) {
         taskListEnable.style.display = 'block';
         renderPage(taskPlanner);
