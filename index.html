@@ -97,20 +97,22 @@
     <!-- Update Task List-->
     <div class="container-fluid task-list">
         <h2 class="board-heading">Task List</h3>
+            <div class="table-responsive-sm">
             <table id="table-data" class="table table-hover">
                 <thead id="table-head-data" class="table-active">
                     <tr>
-                        <th>Task Name <span onclick="sortTable(0)">  <i class="fas fa-arrows-alt-v" title="Sort by Name"></i></span></th>
-                        <th>Description <span onclick="sortTable(1)">  <i class="fas fa-arrows-alt-v" title="Sort by Description"></i></span></th>
-                        <th>Assignee <span onclick="sortTable(2)">  <i class="fas fa-arrows-alt-v" title="Sort by Assignee"></i></span></th>
-                        <th>Due-Date <span onclick="sortTable(3)">  <i class="fas fa-arrows-alt-v" title="Sort by Due date"></i></span></th>
-                        <th>Status <span onclick="sortTable(4)">  <i class="fas fa-arrows-alt-v" title="Sort by Status"></i></span></th>
-                        <th>Priority <span onclick="sortTable(5)">  <i class="fas fa-arrows-alt-v" title="Sort by Priority"></i></span></th>
-                        <th></th>
+                        <th class="w-15">Task Name <span onclick="sortTable(0)">  <i class="fas fa-arrows-alt-v" title="Sort by Name"></i></span></th>
+                        <th class="w-25">Description <span onclick="sortTable(1)">  <i class="fas fa-arrows-alt-v" title="Sort by Description"></i></span></th>
+                        <th class="w-12">Assignee <span onclick="sortTable(2)">  <i class="fas fa-arrows-alt-v" title="Sort by Assignee"></i></span></th>
+                        <th class="w-12">Due-Date <span onclick="sortTable(3)">  <i class="fas fa-arrows-alt-v" title="Sort by Due date"></i></span></th>
+                        <th class="w-12">Status <span onclick="sortTable(4)">  <i class="fas fa-arrows-alt-v" title="Sort by Status"></i></span></th>
+                        <th class="w-12">Priority <span onclick="sortTable(5)">  <i class="fas fa-arrows-alt-v" title="Sort by Priority"></i></span></th>
+                        <th class="w-12"></th>
                     </tr>
                 </thead>
                 <tbody id="table-body-data"> </tbody>
             </table>
+            </div>
     </div>
 
 

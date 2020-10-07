@@ -56,34 +56,6 @@ body {
     height: 110px;
 }
 
-
-/*.darkmode {
-    /* background: #121212;
-    background: #272727; */
-
-
-/* background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
-
-
-/* background-color: #5b6467;
-    background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%); */
-
-
-/* background-color #000000;
-    background-image linear-gradient(315deg, #000000 0%, #7f8c8d 74%); */
-
-
-/* background-image: linear-gradient( 135deg, #FFF6B7 10%, #F6416C 100%); */
-
-
-/* background-color: #7f5a83;
-    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%); */
-
-
-/*background-color: #485461;
-    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
-}*/
-
 .container {
     width: 80%;
 }
@@ -104,25 +76,6 @@ body {
     overflow: auto;
 }
 
-.unassigned-layout-container {
-    width: 25vh;
-    height: 600px;
-}
-
-.active-layout-container {
-    width: 25vh;
-    height: 600px;
-}
-
-.inprogress-layout-container {
-    width: 25vh;
-    height: 600px;
-}
-
-.completed-layout-container {
-    width: 25vh;
-    height: 600px;
-}
 
 .btn {
     float: right;
@@ -144,40 +97,16 @@ body {
 }
 
 .task-list {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
     border-radius: 5px;
     display: none;
     transition: display 2s ease-in-out;
 }
 
-.board-status-title-unassigned {
-    text-align: center;
-    color: rgb(170, 167, 167);
-}
-
-.board-status-title-assigned {
-    text-align: center;
-    color: rgb(135, 128, 230);
-}
-
-.board-status-title-inprogress {
-    text-align: center;
-    color: rgb(219, 216, 13);
-}
-
-.board-status-title-completed {
-    text-align: center;
-    color: rgb(15, 172, 15);
-}
-
 .board-heading {
     padding-top: 10px;
-    text-align: center;
-}
-
-.list-row {
-    float: right;
+    
 }
 
 #table-data table {
@@ -232,9 +161,9 @@ tr {
     border-color: transparent;
 }
 
-.btn-space {
-    margin: 50px;
-}
+/* .btn-space { */
+/*     margin: 50px; */
+/* } */
 
 .modal-content {
     background: var(--modal-background);
@@ -244,45 +173,3 @@ tr {
 .close-x {
     color: var(--close-xbox)
 }
-
-
-/* #table-body-data,
-tr,
-td {
-    border: 1px solid #0e0d0d;
-    text-align: left;
-    /* padding: 8px; */
-
-
-/* 
-
-}
-#table-body-data tr:nth-child(even) {
-    background-color: #0e0d0d;
-}
-*/
-
-
-/* td,
-th,
-tr {
-    border-bottom: 2px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-tr:hover {
-    background-color: #ddd;
-}
-
-th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    color: black;
-    font-style: bold;
-} */
