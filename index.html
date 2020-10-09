@@ -45,7 +45,13 @@
         <h2 class="board-heading"></h2>
 
         <form id="form-validate" class="needs-validation" novalidation>
-            <div class="form-group"> <label class="form-label" for="form-validate-task-name">Task Name</label> <a href="">hold</a></span> <input type="text" id="form-validate-task-name" class="form-control" placeholder="Task Name (minimum 8 characters long)" required>
+            <div class="form-group">
+                <label class="form-label" for="form-validate-task-name">Task Name</label>
+                <div class="checkbox-control">
+                    <input type="checkbox" class="form-check-input" id="clear-form-on-submit">
+                    <label class="form-check-label" for="clear-form-on-submit">Clear Form on Submit</label>
+                </div>
+                <input type="text" id="form-validate-task-name" class="form-control" placeholder="Task Name (minimum 8 characters long)" required>
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Name needs to be 8 characters long or more</div>
             </div>
