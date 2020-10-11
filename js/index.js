@@ -14,29 +14,38 @@ let editStatus = document.querySelector('#modal-edit-task-status');
 let editPriority = document.querySelector('#modal-edit-task-priority');
 const saveBtn = document.querySelector("#save-button");
 const taskListEnable = document.querySelector(".task-list");
+const checkboxClear = document.querySelector("#clear-form-on-submit");
 let tableData = "";
 let validationFail = 0;
 let taskId = 0;
 let storeTaskPlanner;
 let editTaskId = 0;
 let editTsk;
+let checkboxClearFlag = false;
 let taskPlanner = new taskManager;
 
 
 // Function clears all Form fields and sets to empty
 // Function also clears the validation status.
 // ----------------------------------------------------------------------------------
-let clearFields = () => {
-    let today = new Date().toISOString().slice(0, 10);
+let clearFormFields = () => {
     formValidateTaskName.value = "";
     formValidateTaskDescription.value = "";
     formValidateTaskAssignedTo.value = "";
-    formValidateTaskDueDate.value = today;
-    formValidateTaskStatus.value = "Opened";
-    formValidateTaskPriority.value = "Medium";
     formValidateTaskName.classList.remove('is-valid');
     formValidateTaskDescription.classList.remove('is-valid');
     formValidateTaskAssignedTo.classList.remove('is-valid');
+}
+
+// Function clears all Form drop down fields and date 
+// Function also clears the validation status.
+// ----------------------------------------------------------------------------------
+let clearDropdowns = () => {
+    let today = new Date().toISOString().slice(0, 10);
+    console.log(today);
+    formValidateTaskDueDate.value = today;
+    formValidateTaskStatus.value = "Opened";
+    formValidateTaskPriority.value = "Medium";
     formValidateTaskDueDate.classList.remove('is-valid');
 }
 
@@ -176,9 +185,15 @@ formValidate.addEventListener("submit", (event) => {
     // ----------------------------------------------------------------------------------
     renderPage(taskPlanner);
 
-    // Clear all form fields once user data has been processed 
+    // Clear all form fields if user has enabled form clearing
+    // Date and Dropdown menues are always cleared. 
     // ----------------------------------------------------------------------------------
-    clearFields();
+    if (checkboxClearFlag) {
+        clearFormFields();
+        clearDropdowns();
+    } else {
+        clearDropdowns();
+    }
 });
 
 const taskList = document.querySelector('#table-data');
@@ -245,6 +260,18 @@ saveBtn.addEventListener('click', (event) => {
     }
     renderPage(taskPlanner);
 });
+
+// Event listner to enable/disable clearing of form 
+// ----------------------------------------------------------------------------------
+checkboxClear.addEventListener('change', (event) => {
+    checkboxClearFlag = false;
+    if (event.target.checked) {
+        checkboxClearFlag = true;
+    } else {
+        checkboxClearFlag = false;
+    }
+})
+
 
 //const darkMode = document.getElementById("toggle-dark-mode");
 // Add darkmode togglr button to navbar with fa icon switcher.  
