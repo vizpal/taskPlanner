@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <div class="alert alert-success alert-dismissible fade show col-xs-3" role="alert">
-        <p>Local Storage data detected. What would you like to do ? </p>
-        <button class="btn btn-xs btn-space btn-success pull-right close" data-dismiss="alert">Load LocalStoarage</button>
-        <button class="btn btn-xs btn-space btn-danger pull-right close" data-dismiss="alert">Clear LocalStoarage</button>
-    </div>
+    <!-- <div class="alert alert-success alert-dismissible fade show col-xs-3" role="alert"> -->
+    <!--     <p>Local Storage data detected. What would you like to do ? </p> -->
+    <!--     <button class="btn btn-xs btn-space btn-success pull-right close" data-dismiss="alert">Load LocalStoarage</button> -->
+    <!--     <button class="btn btn-xs btn-space btn-danger pull-right close" data-dismiss="alert">Clear LocalStoarage</button> -->
+    <!-- </div> -->
     <!-- Navbar -->
     <div>
         <nav class="navbar navbar-expand-md navbar-light">
@@ -28,8 +28,9 @@
                 <!-- Add navbar toggler icon<span class="navbar-toggler-icon"></span> -->
                 <!-- <div class="task-planner-title"><img class="task-planner-icon" src="./images/taskPlanner.png" alt=""></div> -->
                 <!-- Add navbar toggler icon<span class="navbar-toggler-icon"></span> -->
-                <div class="task-planner-icon"><img class="task-planner-icon" src="./images/taskPlanner_ico1.png" alt=""></div>
-                <div class="task-planner-title"><img class="task-planner-title" src="./images/taskPlanner.png" alt=""></div>
+                <!-- <div class="task-planner-icon"><img class="task-planner-icon" src="./images/taskPlanner_ico1.png" alt=""></div> -->
+                <!-- <div class="task-planner-title"><img class="task-planner-title" src="./images/taskPlanner.png" alt=""></div> -->
+                <div class="task-planner-logo"><image class="task-planner-logo" src="./images/TaskPlanner-Logo2.png" width="250px" heigth="250px" alt=""></div>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item "><i id="toggle-dark-mode"></i></li>
@@ -49,19 +50,19 @@
                 <label class="form-label" for="form-validate-task-name">Task Name</label>
                 <div class="checkbox-control">
                     <input type="checkbox" class="form-check-input" id="clear-form-on-submit">
-                    <label class="form-check-label" for="clear-form-on-submit">Clear Form on Submit</label>
+                    <label class="form-check-label" for="clear-form-on-submit" title="Tick here Task Name, Task Description and Assignee will be cleared">Clear Form on Submit</label>
                 </div>
-                <input type="text" id="form-validate-task-name" class="form-control" placeholder="Task Name (minimum 8 characters long)" required>
+                <input type="text" id="form-validate-task-name" class="form-control" placeholder="Minimum 8 characters long" required>
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Name needs to be 8 characters long or more</div>
             </div>
             <div class="form-group">
                 <label class="form-label" for="form-validate-task-description">Task Description</label>
-                <textarea type="text" id="form-validate-task-description" class="form-control" placeholder="Task Description (minimum 15 characters long)"></textarea>
+                <textarea type="text" id="form-validate-task-description" class="form-control" placeholder="Minimum 15 characters long"></textarea>
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Description needs to be 15 characters long or more</div>
             </div>
-            <div class="form-group"> <label class="form-label" for="form-validate-task-assignedTo">Assignee</label> <input type="text" id="form-validate-task-assignedTo" class="form-control" placeholder="Assign User Name (minimum 8 charaters long)">
+            <div class="form-group"> <label class="form-label" for="form-validate-task-assignedTo">Assignee</label> <input type="text" id="form-validate-task-assignedTo" class="form-control" placeholder="Minimum 8 charaters long">
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Task Assignee needs to be 8 characters long or more</div>
             </div>
@@ -69,7 +70,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label class="form-label" for="form-validate-task-DueDate">Due date</label>
-                    <input type="date" required class="form-control" id="form-validate-task-DueDate">
+                    <input type="date" class="form-control" id="form-validate-task-DueDate">
                 </div>
                 <div class="form-group col-md-4">
                     <label class="form-label" for="form-validate-task-status">Status</label>
