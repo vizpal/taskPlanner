@@ -50,4 +50,4 @@ Created by:
 * [Vishal Dominic](mailto:vizpal@gmail.com) - feel free to contact me!
 
 # License
-MIT
+APACHE 2.0
