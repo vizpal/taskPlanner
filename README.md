@@ -46,7 +46,7 @@ Project is inspired by application such as [Trello](https://trello.com/en) and [
 
 # Contact
 Created by:
-* [Jualiana Tio](mailto:@gmail.com) - feel free to contact me!
+* [Juliana Tio](mailto:@gmail.com) - feel free to contact me!
 * [Vishal Dominic](mailto:vizpal@gmail.com) - feel free to contact me!
 
 # License
