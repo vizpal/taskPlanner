@@ -54,17 +54,38 @@ body {
     /* background-image: linear-gradient(315deg, #b8c6db18 0%, #f5f7fa 74%); */
 }
 
-.task-planner-icon {
-    margin-right: 10px;
-    margin-top: 10px;
-    width: 64px;
-    height: 64px;
-}
 
-.task-planner-title {
-    margin-top: 10px;
-    height: 32px;
-}
+/* .task-planner-icon {   */
+
+
+/*      margin-right: 10px;   */
+
+
+/*      margin-top: 10px;   */
+
+
+/*      width: 64px;   */
+
+
+/*      height: 64px;   */
+
+
+/* }  */
+
+
+/*  */
+
+
+/* .task-planner-title {  */
+
+
+/*      margin-top: 10px;  */
+
+
+/*      height: 32px;  */
+
+
+/* }  */
 
 .checkbox-control {
     float: right;

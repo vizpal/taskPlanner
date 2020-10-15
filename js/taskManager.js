@@ -121,4 +121,3 @@ class taskManager {
             window.localStorage.setItem('currentId', String(currentId));
         }
     }
-}
