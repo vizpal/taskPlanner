@@ -121,7 +121,7 @@ body {
     padding-right: 0.5%;
     border-radius: 5px;
     display: none;
-    transition: display 2s ease-in-out;
+    transition: display 3s ease-in-out;
 }
 
 .board-heading {
@@ -248,7 +248,7 @@ tr {
 }
 
 .add-task-btn {
-    width: 100%;
+    width: 98%;
 }
 
 .btn-light {
