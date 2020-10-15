@@ -122,7 +122,3 @@ class taskManager {
         }
     }
 }
-
-$(document).ready(function() {
-    $('#example').DataTable();
-} );

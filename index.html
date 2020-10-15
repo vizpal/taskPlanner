@@ -16,7 +16,7 @@
 
     <!-- Navbar -->
     <div>
-        <nav class="navbar navbar-expand-md navbar-light">
+        <nav class="navbar navbar-expand-md navbar-light"> 
             <div class="container-fluid">
                 <!-- <a href="#" class="navbar-brand"><img class="task-planner-icon" src="./images/taskPlanner_ico3.png" alt=""><img class="task-planner-icon" src="./images/taskPlanner.png" alt=""></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"></button> -->
                 <!-- <div><img class="task-planner-icon" src="./images/taskPlanner_ico1.png" alt=""></div> -->
@@ -87,8 +87,8 @@
                 </div>
             </div>
 
-            <div class="valid-feedback">Looks good!</div>
-            <div class="invalid-feedback">Task Name needs to be 3 characters long or more</div>
+            <!-- <div class="valid-feedback">Looks good!</div> -->
+            <!-- <div class="invalid-feedback">Task Name needs to be 3 characters long or more</div> -->
             <div class="form-row my-3; justify-content-center">
                 <button class="btn btn-info add-task-btn" type="submit"> Add Task </button>
             </div>
@@ -99,7 +99,7 @@
 
     <hr>
 
-    <!-- Update Task List-->
+    <!-- Task List table main heading  -->
     <div class="container-fluid task-list">
         <h2 class="board-heading">Task List 
             <div class="dataTable-length">
@@ -112,13 +112,12 @@
                         <option value="-1">All</option>
                     </select>
                     <a href="javascript:previous();"><i class="fas fa-arrow-left"></i></a> 
-                    <a href="javascript:next();"><i class="fas fa-arrow-right"></i></a>
-                    
-                    
+                    <a href="javascript:next();"><i class="fas fa-arrow-right"></i></a> 
                 </label>
             </div>
         </h2>
         
+    <!-- Table body -->
             <div class="table-responsive-sm ">
             <table id="table-data" class="table table-hover" width="100%" data-page-length="5" data-order="[[ 1, &quot;asc&quot; ]]">
                 <thead id="table-head-data" class="table-active">

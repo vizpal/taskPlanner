@@ -42,39 +42,40 @@ function sortTable(n) {
     }
 }
 
+// Display certain number of task list per page
 
-const start=0;
-        window.onload=function (){
-            getTaskById(start,10);
-        }
-
-        function next() {
-            start=start+1;
-            if((start*10)> taskPlanner.taskManagerList.length){
-                start=start-1;
-            }
-            else{
-                getTaskById(start,10);
-            }
-        }
-        function previous() {
-            start=start-1;
-            if(start < 0){
-                start=start+1
-            }
-            else{
-                getTaskById(start,10);
-            }
-        }
-
-        function getTaskById(pageIndex,resultsPerPage){
-
-            let offset=pageIndex*resultsPerPage;//page 2=10, page 3=20;
-            let limit=offset+resultsPerPage;
-            let results='';
-
-            let otbod=document.getElementById('table-data').tableData[0];
-            otbod.innerHTML = "";
+/* const start=0; */
+/*         window.onload=function (){ */
+/*             getTaskById(start,10); */
+/*         } */
+/*  */
+/*         function next() { */
+/*             start=start+1; */
+/*             if((start*10)> taskPlanner.taskManagerList.length){ */
+/*                 start=start-1; */
+/*             } */
+/*             else{ */
+/*                 getTaskById(start,10); */
+/*             } */
+/*         } */
+/*         function previous() { */
+/*             start=start-1; */
+/*             if(start < 0){ */
+/*                 start=start+1 */
+/*             } */
+/*             else{ */
+/*                 getTaskById(start,10); */
+/*             } */
+/*         } */
+/*  */
+/*         function getTaskById(pageIndex,resultsPerPage){ */
+/*  */
+/*             let offset=pageIndex*resultsPerPage;//page 2=10, page 3=20; */
+/*             let limit=offset+resultsPerPage; */
+/*             let results=''; */
+/*  */
+/*             let otbod=document.getElementById('table-data').tableData[0]; */
+/*             otbod.innerHTML = ""; */
             //loop through data
            /*  for (let i= offset; i < limit; i++){ */
 

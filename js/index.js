@@ -77,13 +77,17 @@ let renderPage = (taskPlanner) => {
         // Set table row color to green for status DONE tasks.
         document.querySelectorAll('tr').forEach((item) => {
             // cells[4] represents the 4th column of the rendered table corresponds to "status"
-            if (item.cells[4].outerText == "Done") item.style.backgroundColor = "#CAF6CA";
+            if (item.cells[4].outerText == "Done") {item.style.color = "black";
+            item.style.backgroundColor = "#CAF6CA";
+            }
         });
 
         // Set table row color to red for status high priority tasks.
         document.querySelectorAll('tr').forEach((item) => {
             // cells[5] represents the 5th column of the rendered table corresponds to "priority"
-            if (item.cells[5].outerText == "High") item.style.backgroundColor = "#FCD5CE";
+            if (item.cells[5].outerText == "High") {item.style.color = "black";
+            item.style.backgroundColor = "#FCD5CE";
+            }
         });
     }
     // EventListner for Submit Button for adding task. This task is 
