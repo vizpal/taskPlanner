@@ -60,4 +60,24 @@ describe('TaskManager', () => {
             })
         })
     })
+
+    describe('#editTaskById', () => {
+        describe('when editTaskById method is passed an ID', () => {
+            it('should edit task from the corresponding ID from taskManager', () => {
+                const tskManager = new taskManager();
+                let taskToEdit, task;
+                for (let i = 0; i < 10; i++) {
+                    if (i == 4) {
+                        taskToEdit = new taskObject(i, 'Dummy', 'Dummy', 'Dummy', '1/1/2020', '', '');
+                        tskManager.addTask(taskToEdit);
+                    } else {
+                        task = new taskObject(i, 'Normal', 'Normal', 'Normal', '', '', '');
+                        tskManager.addTask(task);
+                    }
+                }
+                expect(tskManager.editTaskById(taskToEdit.tId)).toEqual(taskToEdit);
+            })
+        })
+    })
+
 });
