@@ -19,8 +19,9 @@ The application focuses on user being able to input and view relevant informatio
 # Screenshots
 Light Mode
 ![Light Mode screenshot](./images/lightsMode.jpg)
+
 Dark Mode
-![Dark Mode screenshot](./images/darkMode.png)
+![Dark Mode screenshot](./images/darkMode.jpg)
 
 # Technologies
 * Bootstrap - version 4.5.2
