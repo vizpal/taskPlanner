@@ -17,7 +17,12 @@ The taskPlanner has been build to have a clean user interface with a ministic th
 The application focuses on user being able to input and view relevant information in a consise and systametic manner.
 
 # Screenshots
-![Example screenshot](./images/screenshot.png)
+
+* Light Mode
+![Light Mode screenshot](./images/lightsMode.jpg)
+
+* Dark Mode
+![Dark Mode screenshot](./images/darkMode.jpg)
 
 # Technologies
 * Bootstrap - version 4.5.2
