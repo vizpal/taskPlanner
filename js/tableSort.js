@@ -40,3 +40,61 @@ function sortTable(n) {
             }
         }
     }
+}
+
+// Display certain number of task list per page
+
+/* const start=0; */
+/*         window.onload=function (){ */
+/*             getTaskById(start,10); */
+/*         } */
+/*  */
+/*         function next() { */
+/*             start=start+1; */
+/*             if((start*10)> taskPlanner.taskManagerList.length){ */
+/*                 start=start-1; */
+/*             } */
+/*             else{ */
+/*                 getTaskById(start,10); */
+/*             } */
+/*         } */
+/*         function previous() { */
+/*             start=start-1; */
+/*             if(start < 0){ */
+/*                 start=start+1 */
+/*             } */
+/*             else{ */
+/*                 getTaskById(start,10); */
+/*             } */
+/*         } */
+/*  */
+/*         function getTaskById(pageIndex,resultsPerPage){ */
+/*  */
+/*             let offset=pageIndex*resultsPerPage;//page 2=10, page 3=20; */
+/*             let limit=offset+resultsPerPage; */
+/*             let results=''; */
+/*  */
+/*             let otbod=document.getElementById('table-data').tableData[0]; */
+/*             otbod.innerHTML = ""; */
+//loop through data
+/*  for (let i= offset; i < limit; i++){ */
+
+/*      let otr=document.createElement('tr'); */
+/*      var otd1=document.createElement('td'); */
+/*      var otd2=document.createElement('td'); */
+/*      var otd3=document.createElement('td'); */
+/*      var otd4=document.createElement('td'); */
+/*      otd1.innerHTML=a["list"][i]['name']; */
+/*      otd2.innerHTML=a["list"][i]['age']; */
+/*      otd3.innerHTML=a["list"][i]['height']; */
+
+/*      otr.appendChild(otd1); */
+/*      otr.appendChild(otd2); */
+/*      otr.appendChild(otd3); */
+
+/*      otbod.appendChild(otr); */
+/*  } */
+
+/*  return results; */
+
+// }
