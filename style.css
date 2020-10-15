@@ -14,7 +14,7 @@ html {
     --btn-light-background-color: #f7f7f7;
     --btn-light-color: black;
     /*--bckfooter-color:#dbdfe0;*/
-    --bckfooter-color: #c5ece8;
+    --bckfooter-color: #ced1d186;
 }
 
 html.dark {
@@ -32,7 +32,7 @@ html.dark {
     --table-hover-background-color: rgba(52, 71, 88, 0.966);
     --btn-light-background-color: #2d3142;
     --btn-light-color: white;
-    --bckfooter-color: rgba(83, 83, 83, 0.966);
+    --bckfooter-color: rgba(14, 13, 13, 0.377);
 }
 
 body {
@@ -44,6 +44,11 @@ body {
     color: var(--ft-color);
     transition: color 1.5s ease-out;
     transition: background 1s ease-in-out;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -253,13 +258,18 @@ tr {
 }
 
 .footer {
-    margin-top: 5% !Important;
-    padding-top: 0.8%;
-    padding-bottom: 0;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
     height: 50px;
     text-align: center;
     font-size: 15px;
     background-color: var(--bckfooter-color);
+    transition: background-color 1.5s ease-out;
+}
+
+.text-center {
+    padding-top: 10px;
 }
 
 
