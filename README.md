@@ -18,7 +18,7 @@ The application focuses on user being able to input and view relevant informatio
 
 # Screenshots
 Light Mode
-![Light Mode screenshot](./images/lightsMode.png)
+![Light Mode screenshot](./images/lightsMode.jpg)
 Dark Mode
 ![Dark Mode screenshot](./images/darkMode.png)
 
