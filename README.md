@@ -1,4 +1,4 @@
-# taskPlanner
+# [taskPlanner](https://vizpal.github.io/taskPlanner/)
 > TaskPlanner is a simple ToDo list application that has been built using HTML, CSS and JS.
 
 # Table of contents
